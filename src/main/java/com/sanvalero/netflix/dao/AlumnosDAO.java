@@ -81,7 +81,7 @@ public class AlumnosDAO {
      * Elimina una película
      * @param id El id de la pelicula a eliminar
      */
-    public void borrarAlumno(String nombre) {
+    public void borrarAlumno(String id_alumno) {
         
     }
     

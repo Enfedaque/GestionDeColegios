@@ -19,9 +19,15 @@ public class Alumnos {
         this.edad = edad;
         this.telefono = telefono;
     }
-    
-    
-    //GETTER Y SETTER
+
+    public String getId_alumno() {
+        return id_alumno;
+    }
+
+    public void setId_alumno(String id_alumno) {
+        this.id_alumno = id_alumno;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -42,7 +48,7 @@ public class Alumnos {
         return edad;
     }
 
-    public void setAntiguedad(String edad) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }
 
@@ -50,12 +56,12 @@ public class Alumnos {
         return telefono;
     }
 
+    //GETTER Y SETTER
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
-   //ToString()
-
+    //ToString()
     @Override
     public String toString() {
         return "Colegios{" + "nombre=" + nombre + ", apellido=" + apellido + 
