@@ -1,14 +1,18 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.sanvalero.netflix.dao;
 
-import com.sanvalero.netflix.domain.Movie;
+import com.sanvalero.netflix.domain.Profesor;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class MovieDAO {
+public class ProfesoresDAO {
 
     private final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private final String URL_CONEXION = "jdbc:mysql://localhost:3306/netflix";
@@ -17,7 +21,7 @@ public class MovieDAO {
     
     private Connection connection;
     
-    public MovieDAO() {
+    public ProfesoresDAO() {
         connect();
     }
     
@@ -51,16 +55,15 @@ public class MovieDAO {
      * @param movie La pelicula con la información que se quiere registrar
      * @throws SQLException 
      */
-    public void addMovie(Movie movie) throws SQLException {
-        String sql = "INSERT INTO movies (title, director, duration, category, viewed) " +
+    public void añadirProfesor(Profesor movie) throws SQLException {
+        String sql = "INSERT INTO profesores (nombre_prof, telefono, edad, dni) " +
                 "VALUES (?, ?, ?, ?, ?)";
         
         PreparedStatement sentencia = connection.prepareStatement(sql);
-        sentencia.setString(1, movie.getTitle());
-        sentencia.setString(2, movie.getDirector());
-        sentencia.setInt(3, movie.getDuration());
-        sentencia.setString(4, movie.getCategory());
-        sentencia.setBoolean(5, movie.isViewed());
+        sentencia.setString(1, movie.getNombre_prof());
+        sentencia.setString(2, movie.getTelefono());
+        sentencia.setInt(3, movie.getEdad());
+        sentencia.setString(4, movie.getDni());
         sentencia.executeUpdate();
     }
     
@@ -68,7 +71,7 @@ public class MovieDAO {
      * Obtiene la lista de peliculas de la base de datos
      * @return Una colección con las peliculas
      */
-    public ArrayList<Movie> getAllMovies() throws SQLException {        
+    public ArrayList<Profesor> verTodosProfesores() throws SQLException {        
         return new ArrayList<>();
     }
     
@@ -76,7 +79,7 @@ public class MovieDAO {
      * Elimina una película
      * @param id El id de la pelicula a eliminar
      */
-    public void removeMovie(int id) {
+    public void borrarProfesor(int id) {
         
     }
     
@@ -84,7 +87,7 @@ public class MovieDAO {
      * Modifica la información de una pelicula
      * @param movie La película con la información a modificar
      */
-    public void modifyMovie(Movie movie) {
+    public void modificarProfesor(Profesor movie) {
         
     }
 }
