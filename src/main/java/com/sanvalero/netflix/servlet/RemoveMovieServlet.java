@@ -1,6 +1,6 @@
 package com.sanvalero.netflix.servlet;
 
-import com.sanvalero.netflix.dao.MovieDAO;
+import com.sanvalero.netflix.dao.ColegiosDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +17,7 @@ public class RemoveMovieServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
         int movieId = Integer.parseInt(request.getParameter("id"));
-        MovieDAO movieDAO = new MovieDAO();
+        ColegiosDAO movieDAO = new ColegiosDAO();
         movieDAO.removeMovie(movieId);
         
         response.sendRedirect("movies?message=Pelicula eliminada");

@@ -1,7 +1,7 @@
 package com.sanvalero.netflix.servlet;
 
-import com.sanvalero.netflix.dao.MovieDAO;
-import com.sanvalero.netflix.domain.Movie;
+import com.sanvalero.netflix.dao.ColegiosDAO;
+import com.sanvalero.netflix.domain.Colegios;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -25,8 +25,8 @@ public class AddMovieServlet extends HttpServlet {
         String category = request.getParameter("category");
         boolean viewed = request.getParameter("viewed").equals("on");
         
-        Movie movie = new Movie(title, director, duration, category, viewed);
-        MovieDAO movieDAO = new MovieDAO();
+        Colegios movie = new Colegios(title, director, duration, category, viewed);
+        ColegiosDAO movieDAO = new ColegiosDAO();
         try {
             movieDAO.addMovie(movie);
             

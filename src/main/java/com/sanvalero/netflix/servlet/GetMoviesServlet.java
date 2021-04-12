@@ -1,7 +1,7 @@
 package com.sanvalero.netflix.servlet;
 
-import com.sanvalero.netflix.dao.MovieDAO;
-import com.sanvalero.netflix.domain.Movie;
+import com.sanvalero.netflix.dao.ColegiosDAO;
+import com.sanvalero.netflix.domain.Colegios;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -22,12 +22,12 @@ public class GetMoviesServlet extends HttpServlet {
             ServletException, IOException {
         PrintWriter out = response.getWriter();
         out.println("<p>Listado de peliculas (con servlet)</p>");
-        MovieDAO movieDAO = new MovieDAO();
+        ColegiosDAO movieDAO = new ColegiosDAO();
         try {
-            ArrayList<Movie> movies = movieDAO.getAllMovies();
+            ArrayList<Colegios> movies = movieDAO.getAllMovies();
             out.println("<ul>");
-            for (Movie movie : movies) {
-                out.println("<li>" + movie.getTitle() + " <a href='remove-movie?id=" + movie.getId() + "'>Eliminar</a></li>");
+            for (Colegios movie : movies) {
+                out.println("<li>" + movie.getNombre() + " <a href='remove-movie?id=" + movie.getId() + "'>Eliminar</a></li>");
             }
             // FIXME pelicula de ejemplo (eliminar cuando se desarrolle el listado)
             out.println("<li>Pelicula de ejemplo</li> <a href='remove-movie?id=23'>Eliminar</a></li>");

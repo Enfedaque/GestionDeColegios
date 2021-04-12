@@ -1,14 +1,14 @@
 
 package com.sanvalero.netflix.dao;
 
-import com.sanvalero.netflix.domain.Movie;
+import com.sanvalero.netflix.domain.Colegios;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class MovieDAO {
+public class ColegiosDAO {
 
     //CAMBIADO LOS DATOS PARA ORACLE
     private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
@@ -18,7 +18,7 @@ public class MovieDAO {
     
     private Connection connection;
     
-    public MovieDAO() {
+    public ColegiosDAO() {
         connect();
     }
     
@@ -55,17 +55,16 @@ public class MovieDAO {
      * @throws SQLException 
      */
     //AÑADIR COLEGIO A LA BBDD
-    public void añadirColegio(Movie movie) throws SQLException {
+    public void añadirColegio(Colegios movie) throws SQLException {
         //Insertamos nuestros datos en los apartados de la tabla
-        String sql = "INSERT INTO colegios (nombre-col, ciudad, telefono, antiguedad) " +
+        String sql = "INSERT INTO colegios (nombre_col, ciudad, telefono, antiguedad) " +
                 "VALUES (?, ?, ?, ?)";
         //TODO aun sin hacer, cambiar los get...
         PreparedStatement sentencia = connection.prepareStatement(sql);
-        sentencia.setString(1, movie.getTitle()); 
-        sentencia.setString(2, movie.getDirector());
-        sentencia.setInt(3, movie.getDuration());
-        sentencia.setString(4, movie.getCategory());
-        sentencia.setBoolean(5, movie.isViewed());
+        sentencia.setString(1, movie.getNombre()); 
+        sentencia.setString(2, movie.getCiudad());
+        sentencia.setInt(3, movie.getAntiguedad());
+        sentencia.setString(4, movie.getTelefono());
         sentencia.executeUpdate();
     }
     
@@ -73,7 +72,7 @@ public class MovieDAO {
      * Obtiene la lista de peliculas de la base de datos
      * @return Una colección con las peliculas
      */
-    public ArrayList<Movie> getAllMovies() throws SQLException {        
+    public ArrayList<Colegios> getTodosColegios() throws SQLException {        
         return new ArrayList<>();
     }
     
@@ -81,7 +80,7 @@ public class MovieDAO {
      * Elimina una película
      * @param id El id de la pelicula a eliminar
      */
-    public void removeMovie(int id) {
+    public void borrarColegio(String nombre) {
         
     }
     
@@ -89,7 +88,7 @@ public class MovieDAO {
      * Modifica la información de una pelicula
      * @param movie La película con la información a modificar
      */
-    public void modifyMovie(Movie movie) {
+    public void modificarColegio(Colegios movie) {
         
     }
 }
