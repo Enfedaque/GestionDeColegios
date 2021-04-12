@@ -10,10 +10,11 @@ import java.util.ArrayList;
 
 public class MovieDAO {
 
-    private final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private final String URL_CONEXION = "jdbc:mysql://localhost:3306/netflix";
-    private final String USUARIO = "netflixuser";
-    private final String CONTRASENA = "netflix1234";
+    //CAMBIADO LOS DATOS PARA ORACLE
+    private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
+    private final String URL_CONEXION = "jdbc:oracle:thin:@localhost:1521:xe";
+    private final String USUARIO = "HR";
+    private final String CONTRASENA = "HR";
     
     private Connection connection;
     
@@ -24,6 +25,7 @@ public class MovieDAO {
     /**
      * Conecta con la base de datos
      */
+    //NO TOCAR 
     public void connect() {
         try {
             Class.forName(DRIVER);
@@ -38,6 +40,7 @@ public class MovieDAO {
     /**
      * Desconecta de la base de datos
      */
+    //NO TOCAR
     public void disconnect() {
         try {
             connection.close();
@@ -51,12 +54,14 @@ public class MovieDAO {
      * @param movie La pelicula con la información que se quiere registrar
      * @throws SQLException 
      */
-    public void addMovie(Movie movie) throws SQLException {
-        String sql = "INSERT INTO movies (title, director, duration, category, viewed) " +
-                "VALUES (?, ?, ?, ?, ?)";
-        
+    //AÑADIR COLEGIO A LA BBDD
+    public void añadirColegio(Movie movie) throws SQLException {
+        //Insertamos nuestros datos en los apartados de la tabla
+        String sql = "INSERT INTO colegios (nombre-col, ciudad, telefono, antiguedad) " +
+                "VALUES (?, ?, ?, ?)";
+        //TODO aun sin hacer, cambiar los get...
         PreparedStatement sentencia = connection.prepareStatement(sql);
-        sentencia.setString(1, movie.getTitle());
+        sentencia.setString(1, movie.getTitle()); 
         sentencia.setString(2, movie.getDirector());
         sentencia.setInt(3, movie.getDuration());
         sentencia.setString(4, movie.getCategory());
