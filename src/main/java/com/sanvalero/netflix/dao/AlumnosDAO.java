@@ -1,14 +1,14 @@
 
 package com.sanvalero.netflix.dao;
 
-import com.sanvalero.netflix.domain.Colegios;
+import com.sanvalero.netflix.domain.Alumnos;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class ColegiosDAO {
+public class AlumnosDAO {
 
     //CAMBIADO LOS DATOS PARA ORACLE
     private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
@@ -18,7 +18,7 @@ public class ColegiosDAO {
     
     private Connection connection;
     
-    public ColegiosDAO() {
+    public AlumnosDAO() {
         connect();
     }
     
@@ -55,16 +55,17 @@ public class ColegiosDAO {
      * @throws SQLException 
      */
     //AÑADIR COLEGIO A LA BBDD
-    public void añadirColegio(Colegios movie) throws SQLException {
+    public void añadirAlumno(String nombre, String apellido, String edad, String 
+            telefono) throws SQLException {
         //Insertamos nuestros datos en los apartados de la tabla
-        String sql = "INSERT INTO colegios (nombre_col, ciudad, telefono, antiguedad) " +
+        String sql = "INSERT INTO alumnos (nombre, apellido, edad, telefono) " +
                 "VALUES (?, ?, ?, ?)";
         //TODO aun sin hacer, cambiar los get...
         PreparedStatement sentencia = connection.prepareStatement(sql);
-        sentencia.setString(1, movie.getNombre()); 
-        sentencia.setString(2, movie.getCiudad());
-        sentencia.setInt(3, movie.getAntiguedad());
-        sentencia.setString(4, movie.getTelefono());
+        sentencia.setString(1, nombre); 
+        sentencia.setString(2, apellido);
+        sentencia.setString(3, edad);
+        sentencia.setString(4, telefono);
         sentencia.executeUpdate();
     }
     
@@ -72,7 +73,7 @@ public class ColegiosDAO {
      * Obtiene la lista de peliculas de la base de datos
      * @return Una colección con las peliculas
      */
-    public ArrayList<Colegios> getTodosColegios() throws SQLException {        
+    public ArrayList<Alumnos> getTodosAlumnos() throws SQLException {        
         return new ArrayList<>();
     }
     
@@ -80,7 +81,7 @@ public class ColegiosDAO {
      * Elimina una película
      * @param id El id de la pelicula a eliminar
      */
-    public void borrarColegio(String nombre) {
+    public void borrarAlumno(String nombre) {
         
     }
     
@@ -88,7 +89,7 @@ public class ColegiosDAO {
      * Modifica la información de una pelicula
      * @param movie La película con la información a modificar
      */
-    public void modificarColegio(Colegios movie) {
+    public void modificarAlumno(String id_alumno) {
         
     }
 }
