@@ -12,15 +12,18 @@ package com.sanvalero.netflix.domain;
 public class Asignaturas {
     
     private String ID_Asignatura;
+    private int horas;
+    private String dificultad;
 
-
-    public Asignaturas(String ID_Asignatura) {
+    //CONSTRUCTOR
+    public Asignaturas(String ID_Asignatura, int horas, String dificultad) {
         this.ID_Asignatura = ID_Asignatura;
-  
+        this.horas = horas;
+        this.dificultad = dificultad;
     }
-    
 
 
+   //GETTER Y SETTER
     public String getID_Asignatura() {
         return ID_Asignatura;
     }
@@ -28,5 +31,23 @@ public class Asignaturas {
     public void setID_Asignatura(String ID_Asignatura) {
         this.ID_Asignatura = ID_Asignatura;
     }
+
+    public int getHoras() {
+        return horas;
+    }
+
+    public void setHoras(int horas) {
+        this.horas = horas;
+    }
+
+    public String getDificultad() {
+        return dificultad;
+    }
+
+    public void setDificultad(String dificultad) {
+        this.dificultad = dificultad;
+    }
+    
+    
     
 }
