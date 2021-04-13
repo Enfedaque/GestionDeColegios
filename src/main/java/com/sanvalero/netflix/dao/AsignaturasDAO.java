@@ -52,8 +52,12 @@ public class AsignaturasDAO {
      * Elimina una película
      * @param id El id de la pelicula a eliminar
      */
-    public void borrarAsignatura(int id) {
+    public void borrarAsignatura(String id_asignatura) throws SQLException {
         
+        String sql="DELETE FROM asignaturas WHERE id_asinatura=?";
+        PreparedStatement sentenciaSql=conexion.getConexion().prepareStatement(sql);
+        sentenciaSql.setString(1, id_asignatura);
+        sentenciaSql.executeUpdate();
     }
     
     /**
