@@ -2,24 +2,34 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="css/formulario1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>My form</title>
     </head>
     <body>
-        <h1>Registrar profesor</h1>
+        <div id="formulario">
+        <h1 id="tituloform">Registrar profesor</h1>
         <form method="post" action="add-profesor">
+            <div class="itemform">
             Nombre:
-            <input type="text" name="title"/><br/>
+            <input type="text" name="title" class="cuadroTexto"/><br/>
+            </div>
+            <div class="itemform">
             Telefono:
-            <input type="text" name="director"/><br/>
+            <input type="text" name="director" class="cuadroTexto"/><br/>
+            </div>
+            <div class="itemform">
             Edad:
-            <input type="text" name="duration"/><br/>
+            <input type="text" name="duration" class="cuadroTexto"/><br/>
+            </div>
+            <div class="itemform">
             DNI:
-            <input type="text" name="category"/><br/>
+            <input type="text" name="category" class="cuadroTexto"/><br/>
+            </div>
             
-            <input type="submit" value="Registrar"/>
+            <input type="submit" value="Registrar" id="botonRegistrar"/>
         </form>
-        
+        </div>
         <%
             String status = request.getParameter("status");
             if (status == null)

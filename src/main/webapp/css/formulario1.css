@@ -1,0 +1,21 @@
+
+body{
+    
+    background-color:grey;
+}
+#formulario{
+ margin:150px 600px;
+ padding:40px 80px ;
+ background-color:turquoise;
+ border-radius:5%; 
+}
+
+.cuadroTexto{
+    padding:5px;
+    
+}
+
+#botonRegistrar{
+    margin:20px 40px;
+    
+}
