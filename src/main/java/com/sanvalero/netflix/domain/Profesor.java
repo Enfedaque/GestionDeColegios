@@ -11,7 +11,7 @@ public class Profesor {
     private String telefono;
     private String dni;
 
-    public Profesor(int edad, String nombre_prof, String telefono, int duration, String dni) {
+    public Profesor(int edad, String nombre_prof, String telefono, String dni) {
         this.edad = edad;
         this.nombre_prof = nombre_prof;
         this.telefono = telefono;

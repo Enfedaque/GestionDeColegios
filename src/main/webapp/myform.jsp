@@ -6,18 +6,17 @@
         <title>My form</title>
     </head>
     <body>
-        <h1>Ejemplo de formulario web</h1>
-        <form method="post" action="add-movie">
-            Título:
+        <h1>Registrar profesor</h1>
+        <form method="post" action="add-profesor">
+            Nombre:
             <input type="text" name="title"/><br/>
-            Director:
+            Telefono:
             <input type="text" name="director"/><br/>
-            Duración:
+            Edad:
             <input type="text" name="duration"/><br/>
-            Categoría:
+            DNI:
             <input type="text" name="category"/><br/>
-            Vista:
-            <input type="checkbox" name="viewed"/><br/>
+            
             <input type="submit" value="Registrar"/>
         </form>
         
@@ -27,9 +26,9 @@
                 status = "";
                 
             if (status.equals("ok")) {
-                out.println("<p style='color:green'>La pelicula se ha registrado con éxito</p>");
+                out.println("<p style='color:green'>El profesor se ha registrado con éxito</p>");
             } else if (status.equals("error")) {
-                out.println("<p style='color:red'>No se ha podido registrar la pelicula</p>");
+                out.println("<p style='color:red'>No se ha podido registrar el profesor</p>");
             }
         %>
     </body>
