@@ -48,8 +48,12 @@ public class ProfesoresDAO {
      * Elimina una película
      * @param id El id de la pelicula a eliminar
      */
-    public void borrarProfesor(int id) {
+    public void borrarProfesor(String dni) throws SQLException{
         
+     String sql="DELETE FROM alumno WHERE dni=?";   
+     PreparedStatement statement=conexion.getConexion().prepareStatement(sql);
+    statement.setString(4, dni);
+    statement.executeUpdate();
     }
     
     /**
