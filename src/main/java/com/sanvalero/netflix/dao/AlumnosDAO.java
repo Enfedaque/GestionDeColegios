@@ -29,17 +29,16 @@ public class AlumnosDAO {
     
   
     //AÑADIR COLEGIO A LA BBDD
-    public void añadirAlumno(String nombre, String apellido, String edad, String 
-            telefono) throws SQLException {
+    public void añadirAlumno(String nombreProf,String dni,String telefono,int edad) throws SQLException {
         //Insertamos nuestros datos en los apartados de la tabla
-        String sql = "INSERT INTO alumnos (nombre, apellido, edad, telefono) " +
+        String sql = "INSERT INTO alumnos (nombreProf, dni, telefono, edad) " +
                 "VALUES (?, ?, ?, ?)";
         //TODO aun sin hacer, cambiar los get...
         PreparedStatement sentencia = connection.prepareStatement(sql);
-        sentencia.setString(1, nombre); 
-        sentencia.setString(2, apellido);
-        sentencia.setString(3, edad);
-        sentencia.setString(4, telefono);
+        sentencia.setString(1, nombreProf); 
+        sentencia.setString(2, dni);
+        sentencia.setString(3, telefono);
+        sentencia.setInt(4, edad);
         sentencia.executeUpdate();
     }
     
