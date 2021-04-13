@@ -1,7 +1,8 @@
 package com.sanvalero.netflix.servlet;
 
-import com.sanvalero.netflix.dao.MovieDAO;
-import com.sanvalero.netflix.domain.Movie;
+import com.sanvalero.netflix.dao.Conexion;
+import com.sanvalero.netflix.dao.ProfesoresDAO;
+import com.sanvalero.netflix.domain.Profesor;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -14,21 +15,24 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet que añade una película a la base de datos
  */
-@WebServlet(name = "add-movie", urlPatterns = {"/add-movie"})
+@WebServlet(name = "add-profesor", urlPatterns = {"/add-profesor"})
 public class AddMovieServlet extends HttpServlet {
+    
+    private Conexion conexion;
 
+    //PARA AÑADIR PROFESORES
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
-        String title = request.getParameter("title");
-        String director = request.getParameter("director");
-        int duration = Integer.parseInt(request.getParameter("duration"));
-        String category = request.getParameter("category");
-        boolean viewed = request.getParameter("viewed").equals("on");
+        String nombre_prof = request.getParameter("nombre_prof");
+        String telefono = request.getParameter("telefono");
+        int edad = Integer.parseInt(request.getParameter("edad"));
+        String dni = request.getParameter("dni");
         
-        Movie movie = new Movie(title, director, duration, category, viewed);
-        MovieDAO movieDAO = new MovieDAO();
+        
+        Profesor movie = new Profesor(edad, nombre_prof, telefono, dni);
+        ProfesoresDAO profesoresDAO = new ProfesoresDAO(conexion);
         try {
-            movieDAO.addMovie(movie);
+            profesoresDAO.añadirProfesor(nombre_prof, dni, telefono, edad);
             
             PrintWriter out = response.getWriter();
             response.sendRedirect("myform.jsp?status=ok");
