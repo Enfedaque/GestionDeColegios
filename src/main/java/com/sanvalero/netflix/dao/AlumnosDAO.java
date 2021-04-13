@@ -9,6 +9,7 @@ import com.sanvalero.netflix.domain.Alumnos;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -45,12 +46,18 @@ public class AlumnosDAO {
         sentencia.executeUpdate();
     }
     
-    /**
-     * Obtiene la lista de peliculas de la base de datos
-     * @return Una colección con las peliculas
-     */
-    public ArrayList<Alumnos> getTodosAlumnos() throws SQLException {        
-        return new ArrayList<>();
+    //MOSTRAR TODOS LOS ALUMNOS
+    public void mostrarAlumnos() throws SQLException {        
+        String sql="SELECT nombre , apellido FROM alumnos";
+        PreparedStatement sentencia = connection.prepareStatement(sql);
+        ResultSet resultado=sentencia.executeQuery();
+        System.out.print("Alumnos{ ");
+        while (resultado.next()){
+            System.out.print((resultado.getString("nombre") + " , "));
+            System.out.print((resultado.getString("apellido") + " , "));
+        }
+        System.out.println(" }");
+        sentencia.close();
     }
     
     //ELIMINAR UN ALUMNO POR EL ID
