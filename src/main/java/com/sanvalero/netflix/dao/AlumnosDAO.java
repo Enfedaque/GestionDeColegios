@@ -32,7 +32,8 @@ public class AlumnosDAO {
     public void añadirAlumno(String id_alumno,String nombre,String apellido,int
             edad, String telefono) throws SQLException {
         //Insertamos nuestros datos en los apartados de la tabla
-        String sql = "INSERT INTO alumnos (nombreProf, dni, telefono, edad) " +
+        String sql = "INSERT INTO alumnos (id_alumnos, nombre, apellido, edad ,"
+                + " telefono) " +
                 "VALUES (?, ?, ?, ?)";
         //TODO aun sin hacer, cambiar los get...
         PreparedStatement sentencia = connection.prepareStatement(sql);
