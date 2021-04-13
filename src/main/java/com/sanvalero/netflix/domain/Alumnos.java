@@ -14,11 +14,11 @@ public class Alumnos {
     private String id_alumno;
     private String nombre;
     private String apellido;
-    private String edad;
+    private int edad;
     private String telefono;
    
     //CONSTRUCTOR
-    public Alumnos(String id_alumno, String nombre, String apellido, String edad, String telefono) {
+    public Alumnos(String id_alumno, String nombre, String apellido, int edad, String telefono) {
         this.id_alumno=id_alumno;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -50,11 +50,11 @@ public class Alumnos {
         this.apellido = apellido;
     }
 
-    public String getEdad() {
+    public int getEdad() {
         return edad;
     }
 
-    public void setEdad(String edad) {
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 
