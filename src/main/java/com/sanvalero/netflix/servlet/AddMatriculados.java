@@ -1,11 +1,15 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.sanvalero.netflix.servlet;
 
 import com.sanvalero.netflix.dao.AlumnosDAO;
 import com.sanvalero.netflix.dao.Conexion;
-import com.sanvalero.netflix.dao.ProfesoresDAO;
+import com.sanvalero.netflix.dao.MatriculadosDAO;
 import com.sanvalero.netflix.domain.Alumnos;
-import com.sanvalero.netflix.domain.Profesor;
+import com.sanvalero.netflix.domain.Matriculados;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -17,30 +21,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(name = "add-alumno", urlPatterns = {"/add-alumno"})
-public class AddAlumno extends HttpServlet{
+@WebServlet(name = "add-matriculados", urlPatterns = {"/add-matriculados"})
+public class AddMatriculados extends HttpServlet{
     
-    private Connection connection;
+    private Conexion conexion;
 
-    //PARA AÑADIR PROFESORES
+    //PARA AÑADIR MATRICULAS
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
-        String id_alumno = request.getParameter("id_alumno");
-        String nombre = request.getParameter("nombre");
-        String apellido = request.getParameter("apellido");
-        String edadStr=request.getParameter("edad");
-        int edad=Integer.parseInt(edadStr);
-        String telefono = request.getParameter("telefono");
+        String año_matricula = request.getParameter("año_matricula");
+        String duracionStr=request.getParameter("duracion");
+        int duracion=Integer.parseInt(duracionStr);
         
-        Alumnos profesor = new Alumnos(id_alumno, nombre, apellido, edad, telefono);
-        AlumnosDAO alumnosDAO = new AlumnosDAO(connection);
+        Matriculados matriculados = new Matriculados(año_matricula, duracion);
+        MatriculadosDAO matriculadosDAO=new MatriculadosDAO(conexion);
         try {
-            alumnosDAO.añadirAlumno(id_alumno, nombre, apellido, edad, telefono);
+            matriculadosDAO.añadirMatricula(año_matricula, duracion);
             
             PrintWriter out = response.getWriter();
-            response.sendRedirect("myform2.jsp?status=ok");
+            response.sendRedirect("myform4.jsp?status=ok");
         } catch (SQLException sqle) {
-            response.sendRedirect("myform2.jsp?status=error");
+            response.sendRedirect("myform4.jsp?status=error");
         }
     
     }
@@ -53,4 +54,5 @@ public class AddAlumno extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processRequest(req, resp);
     }
+    
 }
