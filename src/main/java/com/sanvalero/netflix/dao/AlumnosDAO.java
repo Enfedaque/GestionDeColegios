@@ -18,50 +18,16 @@ import java.util.ArrayList;
  */
 public class AlumnosDAO {
     
-    //CAMBIADO LOS DATOS PARA ORACLE
-    private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
-    private final String URL_CONEXION = "jdbc:oracle:thin:@localhost:1521:xe";
-    private final String USUARIO = "HR";
-    private final String CONTRASENA = "HR";
+    
     
     private Connection connection;
     
-    public AlumnosDAO() {
-        connect();
+    public AlumnosDAO(Connection connection) {
+        this.connection=connection;;
     }
     
-    /**
-     * Conecta con la base de datos
-     */
-    //NO TOCAR 
-    public void connect() {
-        try {
-            Class.forName(DRIVER);
-            connection = DriverManager.getConnection(URL_CONEXION, USUARIO, CONTRASENA);
-        } catch (ClassNotFoundException cnfe) {
-            cnfe.printStackTrace();
-        } catch (SQLException sqle) {
-            sqle.printStackTrace();
-        }
-    }
     
-    /**
-     * Desconecta de la base de datos
-     */
-    //NO TOCAR
-    public void disconnect() {
-        try {
-            connection.close();
-        } catch (SQLException sqle) {
-            sqle.printStackTrace();
-        }
-    }
-    
-    /**
-     * Añade una pelicula a la base de datos
-     * @param movie La pelicula con la información que se quiere registrar
-     * @throws SQLException 
-     */
+  
     //AÑADIR COLEGIO A LA BBDD
     public void añadirAlumno(String nombre, String apellido, String edad, String 
             telefono) throws SQLException {
