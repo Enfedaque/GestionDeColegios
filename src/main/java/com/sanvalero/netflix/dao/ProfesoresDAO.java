@@ -42,13 +42,13 @@ public class ProfesoresDAO {
      * @return Una colección con las peliculas
      */
     public void mostrarProfesores() throws SQLException {        
-        String sql="SELECT año , duracion FROM profesores";
+        String sql="SELECT nombre_prof , dni FROM profesores";
         PreparedStatement sentencia = conexion.getConexion().prepareStatement(sql);
         ResultSet resultado=sentencia.executeQuery();
         System.out.print("Profesores{ ");
         while (resultado.next()){
-            System.out.print((resultado.getString("año") + " , "));
-            System.out.print((resultado.getInt("duracion") + " , "));
+            System.out.print((resultado.getString("nombre_prof") + " , "));
+            System.out.print((resultado.getString("dni") + " , "));
         }
         System.out.println(" }");
         sentencia.close();
