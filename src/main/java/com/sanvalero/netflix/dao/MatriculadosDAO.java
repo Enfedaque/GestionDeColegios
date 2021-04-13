@@ -41,8 +41,12 @@ public class MatriculadosDAO {
         return new ArrayList<>();
     }*/
     
-    public void borrarMatricula(int id) {
+    public void borrarMatricula(String año) throws SQLException{
         
+        String sql="DELETE FROM matriculados WHERE año=?";
+        PreparedStatement sentenciaSql=conexion.getConexion().prepareStatement(sql);
+        sentenciaSql.setString(1, año);
+        sentenciaSql.executeUpdate();
     }
     
     public void modificarAsignatura() {
