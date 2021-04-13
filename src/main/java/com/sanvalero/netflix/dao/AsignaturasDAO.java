@@ -19,26 +19,24 @@ public class AsignaturasDAO {
     
 
     
-    private Conexion conexion;
+   private Conexion conexion;
     
     public AsignaturasDAO(Conexion conexion) {
-        this.conexion=conexion;;
+        this.conexion=conexion;
     }
     
     
-    /**
-     * Añade una pelicula a la base de datos
-     * @param movie La pelicula con la información que se quiere registrar
-     * @throws SQLException 
-     */
-    public void añadirAsignatura() throws SQLException {
-        String sql = "INSERT INTO profesores (ID_Asignatura) " +
-                "VALUES (?)";
+    //AÑADIR ASIGNATURA
+    public void añadirAsignatura(String id_asignatura, int horas, 
+            String dificultad) throws SQLException {
+        String sql = "INSERT INTO asignaturas (ID_Asignatura, horas, duracion) " +
+                "VALUES (? , ? , ?)";
         
-        PreparedStatement sentencia = conexion.prepareStatement(sql);
-        sentencia.setString(1, conexion.getID_Asignatura());
-
-        sentencia.executeUpdate();
+        PreparedStatement sentenciaSql=conexion.getConexion().prepareStatement(sql);
+        sentenciaSql.setString(1, id_asignatura);
+        sentenciaSql.setInt(2, horas);
+        sentenciaSql.setString(3, dificultad);
+        sentenciaSql.executeUpdate();
     }
     
     /**
