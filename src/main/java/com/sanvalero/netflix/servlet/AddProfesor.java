@@ -6,7 +6,6 @@ import com.sanvalero.netflix.domain.Profesor;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,34 +13,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet que obtiene la lista completa de peliculas de la base de datos
+ * Servlet que añade una película a la base de datos
  */
-@WebServlet(name = "profesor", urlPatterns = {"/profesor"})
-public class GetMoviesServlet extends HttpServlet {
-
-    private  Conexion conexion;
+@WebServlet(name = "add-profesor", urlPatterns = {"/add-profesor"})
+public class AddProfesor extends HttpServlet {
     
-    //MOSTRAR LOS PROFESORES
+    private Conexion conexion;
+
+    //PARA AÑADIR PROFESORES
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
-        PrintWriter out = response.getWriter();
-        out.println("<p>Listado de profesores (con servlet)</p>");
+        String nombre_prof = request.getParameter("nombre_prof");
+        String telefono = request.getParameter("telefono");
+        String edadStr = request.getParameter("edad");
+        int edad=Integer.parseInt(edadStr);
+        String dni = request.getParameter("dni");
+        
+        Profesor profesor = new Profesor(edad, nombre_prof, telefono, dni);
         ProfesoresDAO profesoresDAO = new ProfesoresDAO(conexion);
         try {
-            profesoresDAO.mostrarProfesores();
-            out.println("<ul>");
+            profesoresDAO.añadirProfesor(nombre_prof, dni, telefono, edad);
             
-            // FIXME pelicula de ejemplo (eliminar cuando se desarrolle el listado)
-            /*out.println("<li>Pelicula de ejemplo</li> <a href='remove-movie?id=23'>Eliminar</a></li>");*/
-            out.println("</ul>");
-
-            // Muestra el mensaje (si lo hay)
-            String message = request.getParameter("message");
-            if (!message.equals("")) {
-                out.println("<p style='color:green'>" + message + "</p>");
-            }
+            PrintWriter out = response.getWriter();
+            response.sendRedirect("myform.jsp?status=ok");
         } catch (SQLException sqle) {
-            sqle.printStackTrace();
+            response.sendRedirect("myform.jsp?status=error");
         }
     }
     
@@ -50,7 +46,7 @@ public class GetMoviesServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processRequest(req, resp);
     }
-
+    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processRequest(req, resp);

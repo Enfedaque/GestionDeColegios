@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet que elimina una película a la base de datos
  */
 @WebServlet(name = "remove-profesor", urlPatterns = {"/remove-profesor"})
-public class RemoveMovieServlet extends HttpServlet {
+public class RemoveProfesor extends HttpServlet {
 
     private Conexion conexion;
     
