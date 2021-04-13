@@ -16,25 +16,24 @@ public class ProfesoresDAO {
 
  
     
-    private Connection connection;
+  private Conexion conexion;
     
-  public ProfesoresDAO(Connection connection) {
-        this.connection=connection;}
-    /**
-     * Añade una pelicula a la base de datos
-     * @param movie La pelicula con la información que se quiere registrar
-     * @throws SQLException 
-     */
-    public void añadirProfesor(Profesor movie) throws SQLException {
+    public ProfesoresDAO(Conexion conexion) {
+        this.conexion=conexion;;
+    }
+    
+    //AÑADIR NUEVO PROFESOR
+    public void añadirProfesor(String nombre, String DNI, String telefono, 
+            String edad) throws SQLException {
         String sql = "INSERT INTO profesores (nombre_prof, telefono, edad, dni) " +
                 "VALUES (?, ?, ?, ?, ?)";
         
-        PreparedStatement sentencia = connection.prepareStatement(sql);
-        sentencia.setString(1, movie.getNombre_prof());
-        sentencia.setString(2, movie.getTelefono());
-        sentencia.setInt(3, movie.getEdad());
-        sentencia.setString(4, movie.getDni());
-        sentencia.executeUpdate();
+        PreparedStatement sentenciaSql=conexion.getConexion().prepareStatement(sql);
+        sentenciaSql.setString(1, nombre);
+        sentenciaSql.setString(2, telefono);
+        sentenciaSql.setString(3, edad);
+        sentenciaSql.setString(4, DNI);
+        sentenciaSql.executeUpdate();
     }
     
     /**

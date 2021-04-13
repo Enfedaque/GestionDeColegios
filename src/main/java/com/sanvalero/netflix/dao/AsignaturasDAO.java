@@ -45,9 +45,10 @@ public class AsignaturasDAO {
      * Obtiene la lista de peliculas de la base de datos
      * @return Una colección con las peliculas
      */
+    /*
     public ArrayList<Asignatura> verTodasAsignaturas() throws SQLException {        
         return new ArrayList<>();
-    }
+    }*/
     
     /**
      * Elimina una película
