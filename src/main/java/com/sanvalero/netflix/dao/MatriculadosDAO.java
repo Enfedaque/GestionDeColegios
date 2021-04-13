@@ -6,6 +6,7 @@
 package com.sanvalero.netflix.dao;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -37,6 +38,19 @@ public class MatriculadosDAO {
         sentenciaSql.executeUpdate();
     }
     
+    
+     public void mostrarMatriculados() throws SQLException {        
+        String sql="SELECT año , duracion FROM matriculados";
+        PreparedStatement sentencia = conexion.getConexion().prepareStatement(sql);
+        ResultSet resultado=sentencia.executeQuery();
+        System.out.print("Matriculados{ ");
+        while (resultado.next()){
+            System.out.print((resultado.getString("año") + " , "));
+            System.out.print((resultado.getInt("duracion") + " , "));
+        }
+        System.out.println(" }");
+        sentencia.close();
+    }
     /*public ArrayList<Matriculas> verTodasAsignaturas() throws SQLException {        
         return new ArrayList<>();
     }*/
