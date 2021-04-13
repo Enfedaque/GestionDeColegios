@@ -8,6 +8,7 @@ package com.sanvalero.netflix.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -39,10 +40,20 @@ public class AsignaturasDAO {
         sentenciaSql.executeUpdate();
     }
     
-    /*
-    public ArrayList<Asignatura> verTodasAsignaturas() throws SQLException {        
-        return new ArrayList<>();
-    }*/
+    //MOSTRAR ASIGNATURAS
+    public void mostrarAsignaturas() throws SQLException{
+        String sql="SELECT id_asignaturas , horas , dificultad FROM asignaturas";
+        PreparedStatement sentencia = conexion.getConexion().prepareStatement(sql);
+        ResultSet resultado=sentencia.executeQuery();
+        System.out.print("Asignaturas{ ");
+        while (resultado.next()){
+            System.out.print((resultado.getString("id_asignaturas") + " , "));
+            System.out.print((resultado.getString("horas") + " , "));
+            System.out.print((resultado.getString("dificultad") + " , "));
+        }
+        System.out.println(" }");
+        sentencia.close();
+    }
     
     
     //ELIMINAR UNA ASIGNATURA POR SU NOMBRE
