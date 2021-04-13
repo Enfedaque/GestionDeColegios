@@ -1,7 +1,8 @@
 package com.sanvalero.netflix.servlet;
 
-import com.sanvalero.netflix.dao.MovieDAO;
-import com.sanvalero.netflix.domain.Movie;
+import com.sanvalero.netflix.dao.Conexion;
+import com.sanvalero.netflix.dao.AsignaturasDAO;
+import com.sanvalero.netflix.domain.Asignaturas;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -14,21 +15,23 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet que añade una película a la base de datos
  */
-@WebServlet(name = "add-movie", urlPatterns = {"/add-movie"})
-public class AddMovieServlet extends HttpServlet {
+@WebServlet(name = "add-asignatura", urlPatterns = {"/add-asignatura"})
+public class AddAsignatura extends HttpServlet {
+    
+    private Conexion conexion;
 
+    //PARA AÑADIR PROFESORES
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
-        String title = request.getParameter("title");
-        String director = request.getParameter("director");
-        int duration = Integer.parseInt(request.getParameter("duration"));
-        String category = request.getParameter("category");
-        boolean viewed = request.getParameter("viewed").equals("on");
+        String ID_Asignatura = request.getParameter("ID_Asignatura");
+        String horasStr = request.getParameter("horas");
+        int horas=Integer.parseInt(horasStr);
+        String duracion = request.getParameter("duracion");
         
-        Movie movie = new Movie(title, director, duration, category, viewed);
-        MovieDAO movieDAO = new MovieDAO();
+        Asignaturas asignatura = new Asignaturas(ID_Asignatura, horas, duracion);
+        AsignaturasDAO asignaturasDAO = new AsignaturasDAO(conexion);
         try {
-            movieDAO.addMovie(movie);
+            asignaturasDAO.añadirAsignatura(ID_Asignatura, horas, duracion);
             
             PrintWriter out = response.getWriter();
             response.sendRedirect("myform.jsp?status=ok");
