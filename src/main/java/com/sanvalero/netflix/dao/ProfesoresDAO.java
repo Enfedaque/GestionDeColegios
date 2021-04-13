@@ -25,14 +25,14 @@ public class ProfesoresDAO {
     
     //AÑADIR NUEVO PROFESOR
     public void añadirProfesor(String nombre, String DNI, String telefono, 
-            String edad) throws SQLException {
+            int edad) throws SQLException {
         String sql = "INSERT INTO profesores (nombre_prof, telefono, edad, dni) " +
                 "VALUES (?, ?, ?, ?, ?)";
         
         PreparedStatement sentenciaSql=conexion.getConexion().prepareStatement(sql);
         sentenciaSql.setString(1, nombre);
         sentenciaSql.setString(2, telefono);
-        sentenciaSql.setString(3, edad);
+        sentenciaSql.setInt(3, edad);
         sentenciaSql.setString(4, DNI);
         sentenciaSql.executeUpdate();
     }
