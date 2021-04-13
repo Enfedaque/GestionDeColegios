@@ -9,6 +9,7 @@ import com.sanvalero.netflix.domain.Profesor;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -40,10 +41,18 @@ public class ProfesoresDAO {
      * Obtiene la lista de peliculas de la base de datos
      * @return Una colección con las peliculas
      */
-    public ArrayList<Profesor> verTodosProfesores() throws SQLException {        
-        return new ArrayList<>();
+    public void mostrarProfesores() throws SQLException {        
+        String sql="SELECT año , duracion FROM matriculados";
+        PreparedStatement sentencia = conexion.getConexion().prepareStatement(sql);
+        ResultSet resultado=sentencia.executeQuery();
+        System.out.print("Matriculados{ ");
+        while (resultado.next()){
+            System.out.print((resultado.getString("año") + " , "));
+            System.out.print((resultado.getInt("duracion") + " , "));
+        }
+        System.out.println(" }");
+        sentencia.close();
     }
-    
     /**
      * Elimina una película
      * @param id El id de la pelicula a eliminar
