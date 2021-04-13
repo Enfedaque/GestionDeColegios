@@ -42,10 +42,10 @@ public class ProfesoresDAO {
      * @return Una colección con las peliculas
      */
     public void mostrarProfesores() throws SQLException {        
-        String sql="SELECT año , duracion FROM matriculados";
+        String sql="SELECT año , duracion FROM profesores";
         PreparedStatement sentencia = conexion.getConexion().prepareStatement(sql);
         ResultSet resultado=sentencia.executeQuery();
-        System.out.print("Matriculados{ ");
+        System.out.print("Profesores{ ");
         while (resultado.next()){
             System.out.print((resultado.getString("año") + " , "));
             System.out.print((resultado.getInt("duracion") + " , "));
@@ -53,26 +53,22 @@ public class ProfesoresDAO {
         System.out.println(" }");
         sentencia.close();
     }
-    /**
-     * Elimina una película
-     * @param id El id de la pelicula a eliminar
-     */
+    
+    
+    //BORRAR PROFESORES POR DNI
     public void borrarProfesor(String dni) throws SQLException{
         
      String sql="DELETE FROM alumno WHERE dni=?";   
      PreparedStatement statement=conexion.getConexion().prepareStatement(sql);
-    statement.setString(4, dni);
+    statement.setString(1, dni);
     statement.executeUpdate();
     }
     
-    /**
-     * Modifica la información de una pelicula
-     * @param movie La película con la información a modificar
-     */
+    //MODIFICAR TELEFONO DE LOS PROFESORES
     public void modificarProfesor(String telefono) throws SQLException {
         String sql="UPDATE profesores SET telefono=?";
         PreparedStatement statement=conexion.getConexion().prepareStatement(sql);
-        statement.setString(2, telefono);
+        statement.setString(1, telefono);
         statement.executeUpdate();
         
         
