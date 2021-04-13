@@ -17,41 +17,14 @@ import java.util.ArrayList;
  */
 public class AsignaturasDAO {
     
-    private final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private final String URL_CONEXION = "jdbc:mysql://localhost:3306/netflix";
-    private final String USUARIO = "netflixuser";
-    private final String CONTRASENA = "netflix1234";
+
     
-    private Connection connection;
+    private Conexion conexion;
     
-    public AsignaturasDAO() {
-        connect();
+    public AsignaturasDAO(Conexion conexion) {
+        this.conexion=conexion;;
     }
     
-    /**
-     * Conecta con la base de datos
-     */
-    public void connect() {
-        try {
-            Class.forName(DRIVER);
-            connection = DriverManager.getConnection(URL_CONEXION, USUARIO, CONTRASENA);
-        } catch (ClassNotFoundException cnfe) {
-            cnfe.printStackTrace();
-        } catch (SQLException sqle) {
-            sqle.printStackTrace();
-        }
-    }
-    
-    /**
-     * Desconecta de la base de datos
-     */
-    public void disconnect() {
-        try {
-            connection.close();
-        } catch (SQLException sqle) {
-            sqle.printStackTrace();
-        }
-    }
     
     /**
      * Añade una pelicula a la base de datos
@@ -62,8 +35,8 @@ public class AsignaturasDAO {
         String sql = "INSERT INTO profesores (ID_Asignatura) " +
                 "VALUES (?)";
         
-        PreparedStatement sentencia = connection.prepareStatement(sql);
-        sentencia.setString(1, asignaturas.getID_Asignatura());
+        PreparedStatement sentencia = conexion.prepareStatement(sql);
+        sentencia.setString(1, conexion.getID_Asignatura());
 
         sentencia.executeUpdate();
     }
