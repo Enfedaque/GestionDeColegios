@@ -50,7 +50,11 @@ public class MatriculadosDAO {
         sentenciaSql.executeUpdate();
     }
     
-    public void modificarAsignatura() {
+    public void modificarMatriculados(String año) throws SQLException{
+         String sql="UPDATE matriculados SET año=?";
+        PreparedStatement statement=conexion.getConexion().prepareStatement(sql);
+        statement.setString(1, año);
+        statement.executeUpdate();
         
     }
 }

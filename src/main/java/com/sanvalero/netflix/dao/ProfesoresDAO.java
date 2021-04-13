@@ -60,7 +60,12 @@ public class ProfesoresDAO {
      * Modifica la información de una pelicula
      * @param movie La película con la información a modificar
      */
-    public void modificarProfesor(Profesor movie) {
+    public void modificarProfesor(String telefono) throws SQLException {
+        String sql="UPDATE profesores SET telefono=?";
+        PreparedStatement statement=conexion.getConexion().prepareStatement(sql);
+        statement.setString(2, telefono);
+        statement.executeUpdate();
+        
         
     }
 }
