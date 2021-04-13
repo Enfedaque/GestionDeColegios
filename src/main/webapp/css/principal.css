@@ -14,22 +14,38 @@
    border-radius: 10%;
 }
 
+#titulos{
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width:1550px; 
+}
+
 .preguntas{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     text-align: center;
     background-color: grey;
-    height: 320px;
+    height: 380px;
     width: 1550px;
+    padding-bottom: 10px;
 }
 
 .contenedorPregunta{
     background-color: #cccccc;
     border-radius: 5%;
     padding: 20px;
+    height: 330px;
 }
 
 .contenedorPregunta a{
     text-decoration: none;
+    
+}
+
+.contenedorPregunta:hover{
+    transform: scale(1.1);
+    background-color: #99ff99;
 }
