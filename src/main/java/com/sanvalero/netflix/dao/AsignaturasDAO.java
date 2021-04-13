@@ -39,19 +39,13 @@ public class AsignaturasDAO {
         sentenciaSql.executeUpdate();
     }
     
-    /**
-     * Obtiene la lista de peliculas de la base de datos
-     * @return Una colección con las peliculas
-     */
     /*
     public ArrayList<Asignatura> verTodasAsignaturas() throws SQLException {        
         return new ArrayList<>();
     }*/
     
-    /**
-     * Elimina una película
-     * @param id El id de la pelicula a eliminar
-     */
+    
+    //ELIMINAR UNA ASIGNATURA POR SU NOMBRE
     public void borrarAsignatura(String id_asignatura) throws SQLException {
         
         String sql="DELETE FROM asignaturas WHERE id_asinatura=?";
@@ -60,12 +54,14 @@ public class AsignaturasDAO {
         sentenciaSql.executeUpdate();
     }
     
-    /**
-     * Modifica la información de una pelicula
-     * @param movie La película con la información a modificar
-     */
-    public void modificarAsignatura() {
+    //CAMBIAR EL ID_ASINATURA
+    public void modificarAsignatura(String id_asignatura) throws SQLException{
         
+        String sql="UPDATE asignaturas SET id_asignatura=?";
+        PreparedStatement statement=conexion.getConexion().prepareStatement(sql);
+        statement.setString(1, id_asignatura);
+        statement.executeQuery();
+       
     }
     
 }

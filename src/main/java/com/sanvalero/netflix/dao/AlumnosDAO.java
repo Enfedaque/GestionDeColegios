@@ -53,10 +53,7 @@ public class AlumnosDAO {
         return new ArrayList<>();
     }
     
-    /**
-     * Elimina una película
-     * @param id El id de la pelicula a eliminar
-     */
+    //ELIMINAR UN ALUMNO POR EL ID
     public void borrarAlumno(String id_alumno) throws SQLException{
         String sql="DELETE FROM alumno WHERE id_alumno=?";
         PreparedStatement statement=connection.prepareStatement(sql);
@@ -64,12 +61,12 @@ public class AlumnosDAO {
         statement.executeUpdate();
     }
     
-    /**
-     * Modifica la información de una pelicula
-     * @param movie La película con la información a modificar
-     */
-    public void modificarAlumno(String id_alumno) {
-        
+    //MODIFICAR ID_ALUMNO
+    public void modificarAlumno(String id_alumno) throws SQLException{
+           String sql="UPDATE alumnos SET id_alumno=?";
+           PreparedStatement statement=connection.prepareStatement(sql);
+            statement.setString(1, id_alumno);
+            statement.executeUpdate();
     }
     
 }
