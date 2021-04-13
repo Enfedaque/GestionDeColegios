@@ -34,9 +34,9 @@ public class AddAsignatura extends HttpServlet {
             asignaturasDAO.añadirAsignatura(ID_Asignatura, horas, duracion);
             
             PrintWriter out = response.getWriter();
-            response.sendRedirect("myform.jsp?status=ok");
+            response.sendRedirect("myform3.jsp?status=ok");
         } catch (SQLException sqle) {
-            response.sendRedirect("myform.jsp?status=error");
+            response.sendRedirect("myform3.jsp?status=error");
         }
     }
     
