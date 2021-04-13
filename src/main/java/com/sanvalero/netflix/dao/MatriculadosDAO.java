@@ -24,7 +24,7 @@ public class MatriculadosDAO {
     
     //AÑADIR MATRICULA
     public void añadirMatricula(String año, int duracion) throws SQLException {
-        String sql = "INSERT INTO matriculas(ano, duracion) VALUES (?, ?)";
+        String sql = "INSERT INTO matriculas(año, duracion) VALUES (?, ?)";
         
         /*PreparedStatement sentencia = conexion.prepareStatement(sql);
         sentencia.setString(1, conexion.getID_Asignatura());
