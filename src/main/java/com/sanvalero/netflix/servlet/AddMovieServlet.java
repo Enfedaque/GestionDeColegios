@@ -29,7 +29,7 @@ public class AddMovieServlet extends HttpServlet {
         String dni = request.getParameter("dni");
         
         
-        Profesor movie = new Profesor(edad, nombre_prof, telefono, dni);
+        Profesor profesor = new Profesor(edad, nombre_prof, telefono, dni);
         ProfesoresDAO profesoresDAO = new ProfesoresDAO(conexion);
         try {
             profesoresDAO.añadirProfesor(nombre_prof, dni, telefono, edad);
