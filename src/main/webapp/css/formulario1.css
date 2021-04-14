@@ -1,7 +1,7 @@
 
 body{
     
-    background-image: url(images/fondo_formulario.jpg); 
+    background-image: url(../images/fondo_formulario.jpg); 
     
 }
 #formulario{
@@ -12,7 +12,7 @@ body{
     background-color:#2A2B45;
     border-radius:5%;
     color:#F0F1FF;
-    
+    box-shadow:7px 23px 37px black;
 }
 
 #tituloform{ 
