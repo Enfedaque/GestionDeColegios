@@ -10,7 +10,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-feature/actualizarBorrarCSS
         <link rel="stylesheet" href="css/formulario3.css">
 
     </head>
