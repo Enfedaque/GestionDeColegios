@@ -11,20 +11,20 @@
         <h1 id="tituloform">Registrar profesor</h1>
         <form method="post" action="add-profesor">
             <div class="itemform">
-            Nombre:
-            <input type="text" name="title" class="cuadroTexto"/><br/>
+            Nombre
+            <input type="text" name="title" class="cuadroTexto" placeholder="Introduzca el nombre"/><br/>
             </div>
             <div class="itemform">
-            Telefono:
-            <input type="text" name="director" class="cuadroTexto"/><br/>
+            Telefono
+            <input type="text" name="director" class="cuadroTexto" placeholder="Introduzca el número de telefono"/><br/>
             </div>
             <div class="itemform">
-            Edad:
-            <input type="text" name="duration" class="cuadroTexto"/><br/>
+            Edad
+            <input type="text" name="duration" class="cuadroTexto" placeholder="Introduzca la edad"/><br/>
             </div>
             <div class="itemform">
-            DNI:
-            <input type="text" name="category" class="cuadroTexto"/><br/>
+            DNI
+            <input type="text" name="category" class="cuadroTexto" placeholder="Introduzca el DNI"/><br/>
             </div>
             
             <input type="submit" value="Registrar" id="botonRegistrar"/>
