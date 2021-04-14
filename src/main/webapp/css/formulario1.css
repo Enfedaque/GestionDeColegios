@@ -1,0 +1,53 @@
+
+body{
+    
+    background-image: url(../images/fondo_formulario.jpg); 
+    
+}
+#formulario{
+    margin:auto;
+    margin-top:100px;
+    padding:20px 50px;
+    width:250px;
+    background-color:#2A2B45;
+    border-radius:5%;
+    color:#F0F1FF;
+    box-shadow:7px 23px 37px black;
+}
+
+#tituloform{ 
+   
+    margin:10px 50px 20px 50px;
+   
+    font-size:40px;
+}
+
+.cuadroTexto{
+    padding:5px;
+    background:#2A2B45;
+    border:2px solid blue;
+    width: 100%;
+    margin-top:6px;
+    color:white;
+    
+    
+}
+
+#botonRegistrar{
+    margin:20px 5px;
+    width:100%;
+    border:none;
+    padding:8px;
+    background: #070EB6;
+    font-size:15px;
+    color:white;
+    
+}
+
+.itemform{
+    font-size:20px; 
+    margin:auto;
+    text-align: center;
+    margin-bottom:10px;
+    
+}
