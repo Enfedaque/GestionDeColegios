@@ -12,19 +12,19 @@
         <form method="post" action="add-profesor">
             <div class="itemform">
             Nombre
-            <input type="text" name="title" class="cuadroTexto" placeholder="Introduzca el nombre"/><br/>
+            <input type="text" name="nombre-prof" class="cuadroTexto" placeholder="Introduzca el nombre"/><br/>
             </div>
             <div class="itemform">
             Telefono
-            <input type="text" name="director" class="cuadroTexto" placeholder="Introduzca el número de telefono"/><br/>
+            <input type="text" name="telefono" class="cuadroTexto" placeholder="Introduzca el número de telefono"/><br/>
             </div>
             <div class="itemform">
             Edad
-            <input type="text" name="duration" class="cuadroTexto" placeholder="Introduzca la edad"/><br/>
+            <input type="text" name="edad" class="cuadroTexto" placeholder="Introduzca la edad"/><br/>
             </div>
             <div class="itemform">
             DNI
-            <input type="text" name="category" class="cuadroTexto" placeholder="Introduzca el DNI"/><br/>
+            <input type="text" name="dni" class="cuadroTexto" placeholder="Introduzca el DNI"/><br/>
             </div>
             
             <input type="submit" value="Registrar" id="botonRegistrar"/>
