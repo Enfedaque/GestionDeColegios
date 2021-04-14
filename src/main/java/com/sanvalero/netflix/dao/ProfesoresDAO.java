@@ -35,6 +35,7 @@ public class ProfesoresDAO {
         sentenciaSql.setInt(3, edad);
         sentenciaSql.setString(4, DNI);
         sentenciaSql.executeUpdate();
+        sentenciaSql.close();
     }
     
     /**
@@ -62,6 +63,7 @@ public class ProfesoresDAO {
      PreparedStatement statement=conexion.getConexion().prepareStatement(sql);
     statement.setString(1, dni);
     statement.executeUpdate();
+    statement.close();
     }
     
     //MODIFICAR TELEFONO DE LOS PROFESORES
@@ -70,6 +72,7 @@ public class ProfesoresDAO {
         PreparedStatement statement=conexion.getConexion().prepareStatement(sql);
         statement.setString(1, telefono);
         statement.executeUpdate();
+        statement.close();
         
         
     }

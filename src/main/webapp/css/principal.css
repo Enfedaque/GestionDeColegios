@@ -3,7 +3,7 @@
     display: flex;
     text-align: center;
     justify-content: center;
-    background-color: grey;
+    background-color: black;
     width: 1550px;
     height: 400px;
     
@@ -15,11 +15,12 @@
 }
 
 #titulos{
-    background-color: grey;
+    background-color: black;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width:1550px; 
+    color: grey;
 }
 
 .preguntas{
@@ -27,7 +28,7 @@
     flex-direction: row;
     justify-content: space-around;
     text-align: center;
-    background-color: grey;
+    background-color: black;
     height: 380px;
     width: 1550px;
     padding-bottom: 10px;
@@ -47,5 +48,7 @@
 
 .contenedorPregunta:hover{
     transform: scale(1.1);
-    background-color: #99ff99;
+    background-color: #ccffff;
 }
+
+
