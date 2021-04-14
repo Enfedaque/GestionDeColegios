@@ -30,14 +30,74 @@
             <input type="submit" value="Registrar" id="botonRegistrar"/>
         </form>
         </div>
+        
         <%
+            String profesor = request.getParameter("profesor");
+            if (profesor == null)
+                profesor = "";
+                
+            if (profesor.equals("ok")) {
+                out.println("<p style='color:green'>El profesor se ha registrado con éxito</p>");
+            } else if (profesor.equals("error")) {
+                out.println("<p style='color:red'>No se ha podido registrar el profesor</p>");
+            }
+        %>
+        <%
+            String telefono = request.getParameter("telefono");
+            if (telefono == null)
+                telefono = "";
+                
+            if (telefono.equals("ok")) {
+                out.println("<p style='color:green'>El telefono se ha registrado con éxito</p>");
+            } else if (telefono.equals("error")) {
+                out.println("<p style='color:red'>No se ha podido registrar el telefono</p>");
+            }
+        %>
+         <%
+            String edadGET = request.getParameter("edad");
+        if(edadGET!=null) {
+            int edad=0;
+            double factorial=1;
+            boolean error = false;
+            try {
+                edad = Integer.valueOf(edadGET);
+                if(edad<1) {
+                    error = true;
+                } else {
+                    for(int i=edad; i>1; i--) {
+                        factorial *= i;            
+                    }
+                }
+            } catch(NumberFormatException e) {
+                error = true;
+            }
+            if(error) {
+                out.println("<p>Debe indicar un número entero mayor que 0</p>");
+            } else {
+                // Mostrar el resultado en la página usando el objeto out
+                out.println("<p>Resultado: "+ edad + "! = " + factorial+"</p>");
+            }
+        }
+        %>
+         <%
+            String dni = request.getParameter("edad");
+            if (dni == null)
+                dni = "";
+                
+            if (dni.equals("ok")) {
+                out.println("<p style='color:green'>El dni se ha registrado con éxito</p>");
+            } else if (dni.equals("error")) {
+                out.println("<p style='color:red'>No se ha podido registrar el dni</p>");
+            }
+        %>
+         <%
             String status = request.getParameter("status");
             if (status == null)
                 status = "";
                 
             if (status.equals("ok")) {
                 out.println("<p style='color:green'>El profesor se ha registrado con éxito</p>");
-            } else if (status.equals("error")) {
+            } else if (profesor.equals("error")) {
                 out.println("<p style='color:red'>No se ha podido registrar el profesor</p>");
             }
         %>
