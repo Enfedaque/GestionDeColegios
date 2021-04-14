@@ -8,7 +8,7 @@
     </head>
     <body>
         <div id="formulario">
-        <h1 id="tituloform">Registrar profesor</h1>
+        <h1 id="tituloform">Registrar matricula</h1>
         <form method="post" action="add-matricula">
             <div class="itemform">
             Año
