@@ -6,6 +6,7 @@
 package com.sanvalero.netflix.dao;
 
 import com.sanvalero.netflix.domain.Alumnos;
+import com.sanvalero.netflix.dao.Conexion;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;

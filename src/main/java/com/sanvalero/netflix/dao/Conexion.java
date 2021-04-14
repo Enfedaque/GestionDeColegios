@@ -15,10 +15,10 @@ import java.sql.SQLException;
  */
 public class Conexion {
     
-    private final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private final String URL_CONEXION = "jdbc:mysql://localhost:3306/netflix";
-    private final String USUARIO = "netflixuser";
-    private final String CONTRASENA = "netflix1234";
+    private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
+    private final String URL_CONEXION = "jdbc:oracle:thin:@localhost:1521:xe";
+    private final String USUARIO = "HR";
+    private final String CONTRASENA = "HR";
     
     private Connection connection;
     
