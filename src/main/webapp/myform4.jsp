@@ -2,18 +2,24 @@
 <!DOCTYPE html>
 <html>
     <head>
+         <link rel="stylesheet" href="css/formulario4.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>My form</title>
     </head>
     <body>
-        <h1>Registrar profesor</h1>
+        <div id="formulario">
+        <h1 id="tituloform">Registrar profesor</h1>
         <form method="post" action="add-matricula">
-            Año:
-            <input type="text" name="año"/><br/>
-            Duracion:
-            <input type="text" name="duracion"/><br/>
+            <div class="itemform">
+            Año
+            <input type="text" class="cuadroTexto" name="año" placeholder="Introduzca el año"/><br/>
+            </div>
+            <div class="itemform">
+            Duracion
+            <input type="text" class="cuadroTexto" name="duracion" placeholder="Introduzca la duración"/><br/>
+            </div>
             
-            <input type="submit" value="Registrar"/>
+            <input type="submit" value="Registrar" id="botonRegistrar"/>
         </form>
         
         <%
