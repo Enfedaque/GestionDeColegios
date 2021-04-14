@@ -16,24 +16,24 @@ import java.sql.SQLException;
 public class Conexion {
     
     private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
-    private final String URL_CONEXION = "jdbc:oracle:thin:@localhost:1521:xe";
+    private final String URL_CONEXION = "jdbc:oracle:thin:@localhost:1521:colegios";
     private final String USUARIO = "HR";
     private final String CONTRASENA = "HR";
     
-    private Connection connection;
+    private Connection conexion;
     
     public Conexion(){
         
     }
     
     public Connection getConexion(){
-        return connection;
+        return conexion;
     }
     
     public void connect() {
         try {
             Class.forName(DRIVER);
-            connection = DriverManager.getConnection(URL_CONEXION, USUARIO, CONTRASENA);
+            conexion = DriverManager.getConnection(URL_CONEXION, USUARIO, CONTRASENA);
         } catch (ClassNotFoundException cnfe) {
             cnfe.printStackTrace();
         } catch (SQLException sqle) {
@@ -43,7 +43,7 @@ public class Conexion {
     
     public void disconnect() {
         try {
-            connection.close();
+            conexion.close();
         } catch (SQLException sqle) {
             sqle.printStackTrace();
         }

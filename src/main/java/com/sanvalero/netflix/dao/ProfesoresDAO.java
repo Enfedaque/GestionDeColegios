@@ -13,6 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import netscape.javascript.JSException;
 
 public class ProfesoresDAO {
 
@@ -26,12 +27,14 @@ public class ProfesoresDAO {
         
     }
     
+    
+    
     //AÑADIR NUEVO PROFESOR
     public void añadirProfesor(String nombre, String DNI, String telefono, 
             int edad) throws SQLException {
         
         String sql = "INSERT INTO profesores (nombre_prof, telefono, edad, dni) " +
-                "VALUES (?, ?, ?, ?, ?)";
+                "VALUES (?, ?, ?, ?)";
         
         PreparedStatement sentenciaSql=conexion.getConexion().prepareStatement(sql);
         sentenciaSql.setString(1, nombre);
@@ -39,12 +42,11 @@ public class ProfesoresDAO {
         sentenciaSql.setInt(3, edad);
         sentenciaSql.setString(4, DNI);
         sentenciaSql.executeUpdate();
-        sentenciaSql.close();
+       
     }
     
     /**
-     * Obtiene la lista de peliculas de la base de datos
-     * @return Una colección con las peliculas
+     *
      */
     public void mostrarProfesores() throws SQLException {        
         String sql="SELECT nombre_prof , dni FROM profesores";

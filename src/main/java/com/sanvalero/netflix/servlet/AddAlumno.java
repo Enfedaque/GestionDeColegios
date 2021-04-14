@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "add-alumno", urlPatterns = {"/add-alumno"})
 public class AddAlumno extends HttpServlet{
     
-    private Connection connection;
+    private Conexion conexion;
 
     //PARA AÑADIR PROFESORES
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
@@ -33,7 +33,7 @@ public class AddAlumno extends HttpServlet{
         String telefono = request.getParameter("telefono");
         
         Alumnos profesor = new Alumnos(id_alumno, nombre, apellido, edad, telefono);
-        AlumnosDAO alumnosDAO = new AlumnosDAO(connection);
+        AlumnosDAO alumnosDAO = new AlumnosDAO(conexion);
         try {
             alumnosDAO.añadirAlumno(id_alumno, nombre, apellido, edad, telefono);
             

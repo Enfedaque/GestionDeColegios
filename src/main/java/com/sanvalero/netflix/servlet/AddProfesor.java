@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 public class AddProfesor extends HttpServlet {
     
     private Conexion conexion;
+   
 
     //PARA AÑADIR PROFESORES
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws

@@ -27,14 +27,14 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "remove-alumno", urlPatterns = {"/remove-alumno"})
 public class RemoveAlumno extends HttpServlet{
     
-    private Connection connection;
+    private Conexion conexion;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
         
         try{
             String id_alumno = request.getParameter("id_alumno");
-           AlumnosDAO alumnosDAO=new AlumnosDAO(connection);
+           AlumnosDAO alumnosDAO=new AlumnosDAO(conexion);
             alumnosDAO.borrarAlumno(id_alumno);
         }catch(SQLException sqle){
             sqle.printStackTrace();

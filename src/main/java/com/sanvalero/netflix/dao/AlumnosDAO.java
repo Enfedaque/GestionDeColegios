@@ -22,10 +22,10 @@ public class AlumnosDAO {
     
     
     
-    private Connection connection;
+    private Conexion conexion;
     
-    public AlumnosDAO(Connection connection) {
-        this.connection=connection;;
+    public AlumnosDAO(Conexion conexion) {
+        this.conexion=conexion;;
     }
     
     
@@ -36,9 +36,9 @@ public class AlumnosDAO {
         //Insertamos nuestros datos en los apartados de la tabla
         String sql = "INSERT INTO alumnos (id_alumnos, nombre, apellido, edad ,"
                 + " telefono) " +
-                "VALUES (?, ?, ?, ?)";
+                "VALUES (?, ?, ?, ?, ?)";
         //TODO aun sin hacer, cambiar los get...
-        PreparedStatement sentencia = connection.prepareStatement(sql);
+        PreparedStatement sentencia = conexion.getConexion().prepareStatement(sql);
         sentencia.setString(1, id_alumno); 
         sentencia.setString(2, nombre);
         sentencia.setString(3, apellido);
@@ -50,7 +50,7 @@ public class AlumnosDAO {
     //MOSTRAR TODOS LOS ALUMNOS
     public void mostrarAlumnos() throws SQLException {        
         String sql="SELECT nombre , apellido FROM alumnos";
-        PreparedStatement sentencia = connection.prepareStatement(sql);
+        PreparedStatement sentencia = conexion.getConexion().prepareStatement(sql);
         ResultSet resultado=sentencia.executeQuery();
         System.out.print("Alumnos{ ");
         while (resultado.next()){
@@ -65,17 +65,17 @@ public class AlumnosDAO {
     //ELIMINAR UN ALUMNO POR EL ID
     public void borrarAlumno(String id_alumno) throws SQLException{
         String sql="DELETE FROM alumno WHERE id_alumno=?";
-        PreparedStatement statement=connection.prepareStatement(sql);
-        statement.setString(1, id_alumno);
-        statement.executeUpdate();
+        PreparedStatement sentencia = conexion.getConexion().prepareStatement(sql);
+        sentencia.setString(1, id_alumno);
+        sentencia.executeUpdate();
     }
     
     //MODIFICAR ID_ALUMNO
     public void modificarAlumno(String id_alumno) throws SQLException{
            String sql="UPDATE alumnos SET id_alumno=?";
-           PreparedStatement statement=connection.prepareStatement(sql);
-            statement.setString(1, id_alumno);
-            statement.executeUpdate();
+           PreparedStatement sentencia = conexion.getConexion().prepareStatement(sql);
+            sentencia.setString(1, id_alumno);
+            sentencia.executeUpdate();
     }
     
 }

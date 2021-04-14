@@ -21,14 +21,14 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "alumnos", urlPatterns = {"/alumnos"})
 public class GetAlumno extends HttpServlet{
     
-    private  Connection conecction;
+    private  Conexion conexion;
     
     //MOSTRAR LOS PROFESORES
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
         PrintWriter out = response.getWriter();
         out.println("<p>Listado de alumnos (con servlet)</p>");
-        AlumnosDAO alumnosDAO=new AlumnosDAO(conecction);
+        AlumnosDAO alumnosDAO=new AlumnosDAO(conexion);
         try {
             alumnosDAO.mostrarAlumnos();
             out.println("<ul>");
