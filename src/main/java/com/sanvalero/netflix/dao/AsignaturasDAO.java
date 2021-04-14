@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.sanvalero.netflix.dao;
-
+import com.sanvalero.netflix.dao.Conexion;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;

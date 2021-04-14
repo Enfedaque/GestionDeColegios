@@ -6,6 +6,7 @@
 package com.sanvalero.netflix.dao;
 
 import com.sanvalero.netflix.domain.Profesor;
+import com.sanvalero.netflix.dao.Conexion;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -21,11 +22,14 @@ public class ProfesoresDAO {
     
     public ProfesoresDAO(Conexion conexion) {
         this.conexion=conexion;;
+        
+        
     }
     
     //AÑADIR NUEVO PROFESOR
     public void añadirProfesor(String nombre, String DNI, String telefono, 
             int edad) throws SQLException {
+        
         String sql = "INSERT INTO profesores (nombre_prof, telefono, edad, dni) " +
                 "VALUES (?, ?, ?, ?, ?)";
         
