@@ -1,3 +1,6 @@
+<%@page import="com.sanvalero.netflix.dao.Conexion"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="com.sanvalero.netflix.dao.ProfesoresDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -31,6 +34,14 @@
         </form>
         </div>
         <%
+            /*Conexion conexion=new Conexion();
+            
+            String nombre_prof=request.getParameter("nombre_prof");
+            String telefono=request.getParameter("telefono");
+            int edad=request.getIntHeader("edad");
+            String dni=request.getParameter("dni");
+            ProfesoresDAO profesoresDAO=new ProfesoresDAO(conexion);
+            profesoresDAO.añadirProfesor(nombre_prof, dni, telefono, edad);*/
             String status = request.getParameter("status");
             if (status == null)
                 status = "";
