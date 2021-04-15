@@ -19,8 +19,8 @@
             <input type="text" class="cuadroTexto" name="horas" placeholder="Introduzca el número de horas"/><br/>
             </div>
              <div class="itemform">
-            Duracion
-            <input type="text" class="cuadroTexto" name="duracion" placeholder="Introduzca la duración"/><br/>
+            Difiultad
+            <input type="text" class="cuadroTexto" name="dificultad" placeholder="Introduzca la dificultad"/><br/>
             </div>
            
             <input type="submit" class="cuadroTexto" value="Registrar" id="botonRegistrar"/>
