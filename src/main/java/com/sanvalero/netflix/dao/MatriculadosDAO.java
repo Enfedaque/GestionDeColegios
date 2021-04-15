@@ -19,7 +19,7 @@ public class MatriculadosDAO {
     private Conexion conexion;
     
     public MatriculadosDAO(Conexion conexion) {
-        this.conexion=conexion;;
+        this.conexion=conexion;
     }
     
     //AÑADIR MATRICULA

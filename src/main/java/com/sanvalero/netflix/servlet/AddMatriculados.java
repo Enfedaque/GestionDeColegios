@@ -5,10 +5,10 @@
  */
 package com.sanvalero.netflix.servlet;
 
-import com.sanvalero.netflix.dao.AlumnosDAO;
+
 import com.sanvalero.netflix.dao.Conexion;
 import com.sanvalero.netflix.dao.MatriculadosDAO;
-import com.sanvalero.netflix.domain.Alumnos;
+
 import com.sanvalero.netflix.domain.Matriculados;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -42,6 +42,7 @@ public class AddMatriculados extends HttpServlet{
             PrintWriter out = response.getWriter();
             response.sendRedirect("myform4.jsp?status=ok");
         } catch (SQLException sqle) {
+            sqle.printStackTrace();
             response.sendRedirect("myform4.jsp?status=error");
         }
     

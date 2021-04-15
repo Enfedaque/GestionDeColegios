@@ -46,7 +46,8 @@ public class ProfesoresDAO {
      * Obtiene la lista de peliculas de la base de datos
      * @return Una colección con las peliculas
      */
-    public void mostrarProfesores() throws SQLException {        
+    public void mostrarProfesores() throws SQLException {   
+        
         String sql="SELECT nombre_prof , dni FROM profesores";
         PreparedStatement sentencia = conexion.getConexion().prepareStatement(sql);
         ResultSet resultado=sentencia.executeQuery();

@@ -24,6 +24,7 @@ public class GetProfesor extends HttpServlet {
     //MOSTRAR LOS PROFESORES
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
+        conexion=new Conexion();
         PrintWriter out = response.getWriter();
         out.println("<p>Listado de profesores (con servlet)</p>");
         ProfesoresDAO profesoresDAO = new ProfesoresDAO(conexion);
@@ -32,7 +33,7 @@ public class GetProfesor extends HttpServlet {
             out.println("<ul>");
             
             // FIXME pelicula de ejemplo (eliminar cuando se desarrolle el listado)
-            /*out.println("<li>Pelicula de ejemplo</li> <a href='remove-movie?id=23'>Eliminar</a></li>");*/
+           /* out.println("<li>Pelicula de ejemplo</li> <a href='remove-movie?id=23'>Eliminar</a></li>");*/
             out.println("</ul>");
 
             // Muestra el mensaje (si lo hay)
