@@ -18,3 +18,20 @@ body{
     text-align: center;
     justify-content: center;
 }
+
+#container{
+    margin:0% 30%;
+    background-color:#5E0F50;
+    border:3px solid black;
+    border-radius:12px;
+    padding:10px;
+    color:whitesmoke;
+    align-items: center;
+    text-align: center;
+    box-shadow: 7px 13px 20px black;
+    margin-top:100px;
+}
+
+#lista{
+    margin:20% 0%;
+}
