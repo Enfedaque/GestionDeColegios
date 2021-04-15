@@ -13,7 +13,7 @@
         <form method="post" action="add-alumno">
             <div class="itemform">
             ID_Alumnos
-            <input type="text" name="id_alumnos" class="cuadroTexto" placeholder="Introduzca el ID-Alumno"/><br/>
+            <input type="text" name="id_alumno" class="cuadroTexto" placeholder="Introduzca el ID-Alumno"/><br/>
             </div>
             <div class="itemform">
             Nombre

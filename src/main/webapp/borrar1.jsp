@@ -15,7 +15,7 @@
     <body>
         <div id="formulario">
         <h1 id="tituloform">Borrar profesor</h1>
-        <form method="post" action="add-profesor">
+        <form method="post" action="remove-profesor">
             
             <div class="itemform">
             DNI
@@ -24,5 +24,7 @@
             
             <input type="submit" value="Eliminar" id="botonRegistrar"/>
         </form>
+        
+        
     </body>
 </html>
