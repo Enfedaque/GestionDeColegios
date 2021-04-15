@@ -46,7 +46,7 @@ public class ProfesoresDAO {
      * Obtiene la lista de peliculas de la base de datos
      * @return Una colección con las peliculas
      */
-    public void mostrarProfesores() throws SQLException {        
+    public void mostrarProfesores2() throws SQLException {        
         String sql="SELECT nombre_prof , dni FROM profesores";
         PreparedStatement sentencia = conexion.getConexion().prepareStatement(sql);
         ResultSet resultado=sentencia.executeQuery();
@@ -57,6 +57,26 @@ public class ProfesoresDAO {
         }
         System.out.println(" }");
         sentencia.close();
+    }
+    
+    //MOSTRAR ARRAY DE PROFESORES
+    public ArrayList<Profesor> mostrarProfesores() throws SQLException{        
+    
+            String sql="SELECT * FROM profesores";
+            ArrayList<Profesor> profesores = new ArrayList<>();
+
+            PreparedStatement sentenciaSql=conexion.getConexion().prepareStatement(sql);
+            ResultSet resultado=sentenciaSql.executeQuery();
+            while(resultado.next()){
+                Profesor profesor=new Profesor();
+                profesor.setNombre_prof(resultado.getString("nombre_prof"));
+                profesor.setTelefono(resultado.getString("telefono"));
+                profesor.setDni(resultado.getString("dni"));
+                profesor.setEdad(resultado.getInt("edad"));
+                
+                profesores.add(profesor);
+            }
+            return profesores;
     }
     
     

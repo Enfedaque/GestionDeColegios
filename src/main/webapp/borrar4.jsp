@@ -30,7 +30,7 @@
                 status = "";
                 
             if (status.equals("ok")) {
-                out.println("<p style='color:green'>la matricula ha sido eliminado</p>");
+                out.println("<p style='color:white'>la matricula ha sido eliminado</p>");
             } else if (status.equals("error")) {
                 out.println("<p style='color:red'>No se ha podido eliminar la matriculo</p>");
             }

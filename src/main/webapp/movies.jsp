@@ -1,6 +1,7 @@
+<%@page import="com.sanvalero.netflix.dao.Conexion"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.sanvalero.netflix.domain.Movie"%>
-<%@page import="com.sanvalero.netflix.dao.MovieDAO"%>
+<%@page import="com.sanvalero.netflix.domain.Profesor"%>
+<%@page import="com.sanvalero.netflix.dao.ProfesoresDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -9,30 +10,25 @@
         <title>Listado de peliculas</title>
     </head>
     <body>
-        <h1>Lista de peliculas (con JSP)</h1>
+        <h1>LISTADO DE PROFESORES</h1>
         <%
-            MovieDAO movieDAO = new MovieDAO();
-            ArrayList<Movie> movies = movieDAO.getAllMovies();
+            
+            Conexion conexion=new Conexion();
+            
+            ProfesoresDAO profesoresDAO = new ProfesoresDAO(conexion);
+            ArrayList<Profesor> listado = profesoresDAO.mostrarProfesores();
         %>
         <ul>
         <%
-            for (Movie movie : movies) {
+            for (Profesor profesor : listado) {
         %>
-        <li><%= movie.getTitle() %> <a href="remove-movie?id=<%= movie.getId() %>">Eliminar</a></li>
+        <li><%= profesor.getNombre_prof() + " , " +  profesor.getTelefono() + " , " +  profesor.getDni() + " , " +  profesor.getEdad()%>
         <%    
             }
         %>
         </ul>
-        <!-- FIXME pelicula de ejemplo (eliminar cuando se desarrolle el listado) -->
-        <li>Título de ejemplo <a href="remove-movie?id=45">Eliminar</a></li>
-        <%
-            // Muestra el mensaje (si lo hay)
-            String message = request.getParameter("message");
-            if (message != null) {
-        %>
-            <p style='color:green'><%= message %></p>
-        <%        
-            }
-        %>
+        
+        
+        
     </body>
 </html>

@@ -36,7 +36,7 @@
                 status = "";
                 
             if (status.equals("ok")) {
-                out.println("<p style='color:green'>El profesor se ha registrado con éxito</p>");
+                out.println("<p style='color:white'>El profesor se ha registrado con éxito</p>");
             } else if (status.equals("error")) {
                 out.println("<p style='color:red'>No se ha podido registrar el profesor</p>");
             }
