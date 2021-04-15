@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet que obtiene la lista completa de peliculas de la base de datos
  */
-@WebServlet(name = "profesor", urlPatterns = {"/profesor"})
+@WebServlet(name = "get-profesor", urlPatterns = {"/get-profesor"})
 public class GetProfesor extends HttpServlet {
 
     private  Conexion conexion;
@@ -27,11 +27,12 @@ public class GetProfesor extends HttpServlet {
         conexion=new Conexion();
         PrintWriter out = response.getWriter();
         out.println("<p>Listado de profesores (con servlet)</p>");
+        conexion=new Conexion();
         ProfesoresDAO profesoresDAO = new ProfesoresDAO(conexion);
         try {
             profesoresDAO.mostrarProfesores();
-            out.println("<ul>");
             
+<<<<<<< HEAD
             // FIXME pelicula de ejemplo (eliminar cuando se desarrolle el listado)
            /* out.println("<li>Pelicula de ejemplo</li> <a href='remove-movie?id=23'>Eliminar</a></li>");*/
             out.println("</ul>");
@@ -41,6 +42,10 @@ public class GetProfesor extends HttpServlet {
             if (!message.equals("")) {
                 out.println("<p style='color:green'>" + message + "</p>");
             }
+=======
+            response.sendRedirect("mostrar1.jsp?status=ok");
+            
+>>>>>>> d1133181d771f895e8b6c6e7cd8e80f426391a57
         } catch (SQLException sqle) {
             sqle.printStackTrace();
         }

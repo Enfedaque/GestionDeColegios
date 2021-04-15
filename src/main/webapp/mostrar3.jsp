@@ -4,6 +4,10 @@
     Author     : David Enfedaque
 --%>
 
+<%@page import="com.sanvalero.netflix.domain.Asignaturas"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.sanvalero.netflix.dao.AsignaturasDAO"%>
+<%@page import="com.sanvalero.netflix.dao.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,20 +17,22 @@
         <link rel="stylesheet" href="css/mostrar3.css">
     </head>
     <body>
-        <div class="mostrar">
-            <div class="titulo">
-                <h2>LISTADO DE ASIGNATURAS</h2>
-            </div>
-            <div class="cuerpo">
-                yjtytirtuituituitueglnjwtehyowerhtngouerohgt5otyhueroiuyte5uhyte
-                yjtytirtuituituitueglnjwtehyowerhtngouerohgt5otyhueroiuyte5uhyte
-                yjtytirtuituituitueglnjwtehyowerhtngouerohgt5otyhueroiuyte5uhyte
-                yjtytirtuituituitueglnjwtehyowerhtngouerohgt5otyhueroiuyte5uhyte
-                yjtytirtuituituitueglnjwtehyowerhtngouerohgt5otyhueroiuyte5uhyte
-                yjtytirtuituituitueglnjwtehyowerhtngouerohgt5otyhueroiuyte5uhyte
-                yjtytirtuituituitueglnjwtehyowerhtngouerohgt5otyhueroiuyte5uhyte
-                yjtytirtuituituitueglnjwtehyowerhtngouerohgt5otyhueroiuyte5uhyte
-            </div>
-        </div>
+        <h1>LISTADO DE PROFESORES</h1>
+        <%
+            
+            Conexion conexion=new Conexion();
+            
+            AsignaturasDAO asignaturaDAO = new AsignaturasDAO(conexion);
+            ArrayList<Asignaturas> listado = asignaturaDAO.mostrarAsignaturas();
+        %>
+        <ul>
+        <%
+            for (Asignaturas asignatura : listado) {
+        %>
+        <li><%= asignatura.getID_Asignatura() + " , " +  asignatura.getHoras() + " , " +  asignatura.getDificultad() %>
+        <%    
+            }
+        %>
+        </ul>
     </body>
 </html>

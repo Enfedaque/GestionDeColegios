@@ -30,7 +30,7 @@
                 status = "";
                 
             if (status.equals("ok")) {
-                out.println("<p style='color:green'>El profesor ha sido eliminado</p>");
+                out.println("<p style='color:white'>El profesor ha sido eliminado</p>");
             } else if (status.equals("error")) {
                 out.println("<p style='color:red'>No se ha podido eliminar el profesor</p>");
             }
