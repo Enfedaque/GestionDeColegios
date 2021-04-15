@@ -17,17 +17,9 @@
             <div class="titulo">
                 <h2>LISTADO DE PROFESORES</h2>
             </div>
-            <div class="cuerpo">
-            yjtytirtuituituitueglnjwtehyowerhtngouerohgt5otyhueroiuyte5uhyte
-            yjtytirtuituituitueglnjwtehyowerhtngouerohgt5otyhueroiuyte5uhyte
-            yjtytirtuituituitueglnjwtehyowerhtngouerohgt5otyhueroiuyte5uhyte
-            yjtytirtuituituitueglnjwtehyowerhtngouerohgt5otyhueroiuyte5uhyte
-            yjtytirtuituituitueglnjwtehyowerhtngouerohgt5otyhueroiuyte5uhyte
-            yjtytirtuituituitueglnjwtehyowerhtngouerohgt5otyhueroiuyte5uhyte
-            yjtytirtuituituitueglnjwtehyowerhtngouerohgt5otyhueroiuyte5uhyte
-            yjtytirtuituituitueglnjwtehyowerhtngouerohgt5otyhueroiuyte5uhyte
-            
-            </div>
+            <form method="get" action="profesor">
+                <input type="submit" value="Get" id="botonRegistrar"/>
+            </form>
         </div>
         
     </body>

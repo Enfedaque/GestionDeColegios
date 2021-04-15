@@ -21,6 +21,7 @@
             DNI
             <input type="text" name="dni" class="cuadroTexto" placeholder="Introduzca el DNI"/><br/>
             </div>
+        
             
             <input type="submit" value="Eliminar" id="botonRegistrar"/>
         </form>

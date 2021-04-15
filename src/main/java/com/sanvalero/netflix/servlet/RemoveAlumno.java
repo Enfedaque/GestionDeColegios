@@ -8,7 +8,7 @@ package com.sanvalero.netflix.servlet;
 
 import com.sanvalero.netflix.dao.AlumnosDAO;
 import com.sanvalero.netflix.dao.Conexion;
-import com.sanvalero.netflix.dao.ProfesoresDAO;
+
 import com.sanvalero.netflix.domain.Alumnos;
 import java.io.IOException;
 import java.sql.Connection;
@@ -31,7 +31,7 @@ public class RemoveAlumno extends HttpServlet{
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
-        
+        conexion=new Conexion();
         try{
             String id_alumno = request.getParameter("id_alumno");
            AlumnosDAO alumnosDAO=new AlumnosDAO(conexion);

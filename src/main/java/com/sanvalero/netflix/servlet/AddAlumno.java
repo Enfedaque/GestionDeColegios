@@ -3,9 +3,9 @@ package com.sanvalero.netflix.servlet;
 
 import com.sanvalero.netflix.dao.AlumnosDAO;
 import com.sanvalero.netflix.dao.Conexion;
-import com.sanvalero.netflix.dao.ProfesoresDAO;
+
 import com.sanvalero.netflix.domain.Alumnos;
-import com.sanvalero.netflix.domain.Profesor;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -35,6 +35,7 @@ public class AddAlumno extends HttpServlet{
         Alumnos profesor = new Alumnos(id_alumno, nombre, apellido, edad, telefono);
         
         conexion=new Conexion();
+        
         AlumnosDAO alumnosDAO = new AlumnosDAO(conexion);
         try {
             alumnosDAO.añadirAlumno(id_alumno, nombre, apellido, edad, telefono);
