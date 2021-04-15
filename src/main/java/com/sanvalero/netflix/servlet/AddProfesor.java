@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 public class AddProfesor extends HttpServlet {
     
     private Conexion conexion;
+    
 
     //PARA AÑADIR PROFESORES
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
@@ -30,13 +31,17 @@ public class AddProfesor extends HttpServlet {
         String dni = request.getParameter("dni");
         
         Profesor profesor = new Profesor(edad, nombre_prof, telefono, dni);
+        
+        conexion=new Conexion();
         ProfesoresDAO profesoresDAO = new ProfesoresDAO(conexion);
         try {
+            
             profesoresDAO.añadirProfesor(nombre_prof, dni, telefono, edad);
             
             PrintWriter out = response.getWriter();
             response.sendRedirect("myform.jsp?status=ok");
         } catch (SQLException sqle) {
+            sqle.printStackTrace();
             response.sendRedirect("myform.jsp?status=error");
         }
     }

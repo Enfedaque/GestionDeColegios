@@ -31,7 +31,7 @@ public class ProfesoresDAO {
             int edad) throws SQLException {
         
         String sql = "INSERT INTO profesores (nombre_prof, telefono, edad, dni) " +
-                "VALUES (?, ?, ?, ?, ?)";
+                "VALUES (?, ?, ?, ?)";
         
         PreparedStatement sentenciaSql=conexion.getConexion().prepareStatement(sql);
         sentenciaSql.setString(1, nombre);
