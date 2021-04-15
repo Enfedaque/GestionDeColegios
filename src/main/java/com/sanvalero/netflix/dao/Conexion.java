@@ -23,7 +23,7 @@ public class Conexion {
     private Connection connection;
     
     public Conexion(){
-        
+        connect();
     }
     
     public Connection getConexion(){
