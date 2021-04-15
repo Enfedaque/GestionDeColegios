@@ -30,7 +30,7 @@ public class AsignaturasDAO {
     //AÑADIR ASIGNATURA
     public void añadirAsignatura(String id_asignatura, int horas, 
             String dificultad) throws SQLException {
-        String sql = "INSERT INTO asignaturas (ID_Asignatura, horas, duracion) " +
+        String sql = "INSERT INTO asignaturas (id_asignatura, horas, dificultad) " +
                 "VALUES (? , ? , ?)";
         
         PreparedStatement sentenciaSql=conexion.getConexion().prepareStatement(sql);
@@ -38,6 +38,7 @@ public class AsignaturasDAO {
         sentenciaSql.setInt(2, horas);
         sentenciaSql.setString(3, dificultad);
         sentenciaSql.executeUpdate();
+        sentenciaSql.close();
     }
     
     //MOSTRAR ASIGNATURAS
