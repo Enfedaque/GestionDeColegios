@@ -21,7 +21,7 @@ public class RemoveProfesor extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
-        
+        conexion=new Conexion();
         try{
             String dni = request.getParameter("dni");
             ProfesoresDAO profesorDAO = new ProfesoresDAO(conexion);

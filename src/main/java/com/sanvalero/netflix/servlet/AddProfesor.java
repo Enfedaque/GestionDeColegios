@@ -31,7 +31,7 @@ public class AddProfesor extends HttpServlet {
         String dni = request.getParameter("dni");
         
         Profesor profesor = new Profesor(edad, nombre_prof, telefono, dni);
-        
+        //AÑADIDO
         conexion=new Conexion();
         ProfesoresDAO profesoresDAO = new ProfesoresDAO(conexion);
         try {
