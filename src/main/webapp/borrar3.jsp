@@ -16,11 +16,11 @@
     </head>
     <body>
         <div id="formulario">
-        <h1 id="tituloform">Borrar asignatura</h1>
+        <h1 id="tituloform">Remove subject</h1>
         <form method="post" action="remove-asignatura">
             
             <div class="itemform">
-            ID_Asignatura
+            ID_Subject
             <input type="text" name="id_asignatura" class="cuadroTexto" placeholder="Introduzca el ID_Asignatura"/><br/>
             </div>
             

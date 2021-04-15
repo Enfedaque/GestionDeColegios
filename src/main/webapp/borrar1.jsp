@@ -14,7 +14,7 @@
     </head>
     <body>
         <div id="formulario">
-        <h1 id="tituloform">Borrar profesor</h1>
+        <h1 id="tituloform">Remove teacher</h1>
         <form method="post" action="remove-profesor">
             
             <div class="itemform">

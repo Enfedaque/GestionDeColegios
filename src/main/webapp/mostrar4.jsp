@@ -15,7 +15,7 @@
     <body>
         <div id="container">
             <div id="titulo">
-            <h1>LISTADO DE MATRICULAS</h1>
+            <h1>LICENSES´S LIST</h1>
         </div>
         <div id="lista">
             <%

@@ -14,11 +14,11 @@
     </head>
     <body>
         <div id="formulario">
-        <h1 id="tituloform">Borrar alumno</h1>
+        <h1 id="tituloform">Remove student</h1>
         <form method="post" action="remove-alumno">
             
             <div class="itemform">
-            ID_Alumno
+            ID_Student
             <input type="text" name="id_alumno" class="cuadroTexto" placeholder="Introduzca el ID_Alumno"/><br/>
             </div>
             

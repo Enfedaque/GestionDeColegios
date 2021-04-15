@@ -14,11 +14,11 @@
     </head>
     <body>
         <div id="formulario">
-        <h1 id="tituloform">Borrar matricula</h1>
+        <h1 id="tituloform">Remove license</h1>
         <form method="post" action="remove-matriculados">
             
             <div class="itemform">
-            Año
+            Year
             <input type="text" name="año" class="cuadroTexto" placeholder="Introduzca el año"/><br/>
             </div>
             
