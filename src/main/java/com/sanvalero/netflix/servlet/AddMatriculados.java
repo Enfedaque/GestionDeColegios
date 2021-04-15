@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(name = "add-matriculados", urlPatterns = {"/add-matriculados"})
+@WebServlet(name = "add-matricula", urlPatterns = {"/add-matricula"})
 public class AddMatriculados extends HttpServlet{
     
     private Conexion conexion;
@@ -34,6 +34,7 @@ public class AddMatriculados extends HttpServlet{
         int duracion=Integer.parseInt(duracionStr);
         
         Matriculados matriculados = new Matriculados(año_matricula, duracion);
+        conexion=new Conexion();
         MatriculadosDAO matriculadosDAO=new MatriculadosDAO(conexion);
         try {
             matriculadosDAO.añadirMatricula(año_matricula, duracion);

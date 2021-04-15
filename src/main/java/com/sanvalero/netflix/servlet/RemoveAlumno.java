@@ -31,17 +31,16 @@ public class RemoveAlumno extends HttpServlet{
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
-        
+        conexion=new Conexion();
         try{
             String id_alumno = request.getParameter("id_alumno");
            AlumnosDAO alumnosDAO=new AlumnosDAO(conexion);
             alumnosDAO.borrarAlumno(id_alumno);
+            response.sendRedirect("borrar2.jsp?status=ok");
         }catch(SQLException sqle){
             sqle.printStackTrace();
+            response.sendRedirect("borrar2.jsp?status=error");
         }
-        
-        
-        response.sendRedirect("alumno?message=alumno eliminado");
     }
     
     

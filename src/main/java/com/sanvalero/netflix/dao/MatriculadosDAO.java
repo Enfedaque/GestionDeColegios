@@ -24,13 +24,7 @@ public class MatriculadosDAO {
     
     //AÑADIR MATRICULA
     public void añadirMatricula(String año, int duracion) throws SQLException {
-        String sql = "INSERT INTO matriculas(año, duracion) VALUES (?, ?)";
-        
-        /*PreparedStatement sentencia = conexion.prepareStatement(sql);
-        sentencia.setString(1, conexion.getID_Asignatura());
-
-        sentencia.executeUpdate();*/
-        
+        String sql = "INSERT INTO matriculados(ano_matricula, duracion) VALUES (?, ?)";
         PreparedStatement sentenciaSql=conexion.getConexion().prepareStatement(sql);
         //Le indico los parametros para cada hueco
         sentenciaSql.setString(1, año);
@@ -58,7 +52,7 @@ public class MatriculadosDAO {
     //ELIMINADO MATRICULA DEL AÑO 
     public void borrarMatricula(String año) throws SQLException{
         
-        String sql="DELETE FROM matriculados WHERE año=?";
+        String sql="DELETE FROM matriculados WHERE año_matricula=?";
         PreparedStatement sentenciaSql=conexion.getConexion().prepareStatement(sql);
         sentenciaSql.setString(1, año);
         sentenciaSql.executeUpdate();

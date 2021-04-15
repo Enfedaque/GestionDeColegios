@@ -63,7 +63,7 @@ public class AlumnosDAO {
     
     //ELIMINAR UN ALUMNO POR EL ID
     public void borrarAlumno(String id_alumno) throws SQLException{
-        String sql="DELETE FROM alumno WHERE id_alumno=?";
+        String sql="DELETE FROM alumnos WHERE id_alumno=?";
         PreparedStatement statement=conexion.getConexion().prepareStatement(sql);
         statement.setString(1, id_alumno);
         statement.executeUpdate();
