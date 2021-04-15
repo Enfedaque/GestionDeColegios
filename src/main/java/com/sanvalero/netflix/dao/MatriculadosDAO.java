@@ -5,6 +5,7 @@
  */
 package com.sanvalero.netflix.dao;
 import com.sanvalero.netflix.dao.Conexion;
+import com.sanvalero.netflix.domain.Matriculados;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -33,7 +34,7 @@ public class MatriculadosDAO {
     }
     
     
-     public void mostrarMatriculados() throws SQLException {        
+     public void mostrarMatriculados2() throws SQLException {        
         String sql="SELECT año , duracion FROM matriculados";
         PreparedStatement sentencia = conexion.getConexion().prepareStatement(sql);
         ResultSet resultado=sentencia.executeQuery();
@@ -45,9 +46,24 @@ public class MatriculadosDAO {
         System.out.println(" }");
         sentencia.close();
     }
-    /*public ArrayList<Matriculas> verTodasAsignaturas() throws SQLException {        
-        return new ArrayList<>();
-    }*/
+    
+     //MOSTRAR ARRAY DE PROFESORES
+    public ArrayList<Matriculados> mostrarMatriculados() throws SQLException{        
+    
+            String sql="SELECT * FROM matriculados";
+            ArrayList<Matriculados> matriculados = new ArrayList<>();
+
+            PreparedStatement sentenciaSql=conexion.getConexion().prepareStatement(sql);
+            ResultSet resultado=sentenciaSql.executeQuery();
+            while(resultado.next()){
+                Matriculados matriculado=new Matriculados();
+                matriculado.setAño_matricula(resultado.getString("ano_matricula"));
+                matriculado.setDuracion(resultado.getInt("duracion"));
+                
+                matriculados.add(matriculado);
+            }
+            return matriculados;
+    }
     
     //ELIMINADO MATRICULA DEL AÑO 
     public void borrarMatricula(String año) throws SQLException{

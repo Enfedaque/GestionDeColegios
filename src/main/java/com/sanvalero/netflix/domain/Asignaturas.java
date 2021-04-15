@@ -22,6 +22,10 @@ public class Asignaturas {
         this.dificultad = dificultad;
     }
 
+    public Asignaturas() {
+        
+    }
+
 
    //GETTER Y SETTER
     public String getID_Asignatura() {

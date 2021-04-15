@@ -7,6 +7,7 @@ package com.sanvalero.netflix.dao;
 
 import com.sanvalero.netflix.domain.Alumnos;
 import com.sanvalero.netflix.dao.Conexion;
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -47,7 +48,7 @@ public class AlumnosDAO {
     }
     
     //MOSTRAR TODOS LOS ALUMNOS
-    public void mostrarAlumnos() throws SQLException {        
+    public void mostrarAlumnos2() throws SQLException {        
         String sql="SELECT nombre , apellido FROM alumnos";
         PreparedStatement sentencia = conexion.getConexion().prepareStatement(sql);
         ResultSet resultado=sentencia.executeQuery();
@@ -58,6 +59,27 @@ public class AlumnosDAO {
         }
         System.out.println(" }");
         sentencia.close();
+    }
+    
+    //MOSTRAR ARRAY DE ALUMNOS
+    public ArrayList<Alumnos> mostrarAlumnos() throws SQLException{        
+    
+            String sql="SELECT * FROM alumnos";
+            ArrayList<Alumnos> alumnos = new ArrayList<>();
+
+            PreparedStatement sentenciaSql=conexion.getConexion().prepareStatement(sql);
+            ResultSet resultado=sentenciaSql.executeQuery();
+            while(resultado.next()){
+                Alumnos alumno=new Alumnos();
+                alumno.setNombre(resultado.getString("nombre"));
+                alumno.setApellido(resultado.getString("apellido"));
+                alumno.setId_alumno(resultado.getString("id_alumno"));
+                alumno.setEdad(resultado.getInt("edad"));
+                alumno.setTelefono(resultado.getString("telefono"));
+                
+                alumnos.add(alumno);
+            }
+            return alumnos;
     }
     
     
