@@ -24,28 +24,25 @@ public class MatriculadosDAO {
     
     //AÑADIR MATRICULA
     public void añadirMatricula(String año, int duracion) throws SQLException {
-        String sql = "INSERT INTO matriculas(año, duracion) VALUES (?, ?)";
+        String sql = "INSERT INTO matriculados (año_matricula, duracion) VALUES (?, ?)";
         
-        /*PreparedStatement sentencia = conexion.prepareStatement(sql);
-        sentencia.setString(1, conexion.getID_Asignatura());
-
-        sentencia.executeUpdate();*/
         
         PreparedStatement sentenciaSql=conexion.getConexion().prepareStatement(sql);
         //Le indico los parametros para cada hueco
         sentenciaSql.setString(1, año);
         sentenciaSql.setInt(2, duracion);
         sentenciaSql.executeUpdate();
+        sentenciaSql.close();
     }
     
     
      public void mostrarMatriculados() throws SQLException {        
-        String sql="SELECT año , duracion FROM matriculados";
+        String sql="SELECT año_matricula , duracion FROM matriculados";
         PreparedStatement sentencia = conexion.getConexion().prepareStatement(sql);
         ResultSet resultado=sentencia.executeQuery();
         System.out.print("Matriculados{ ");
         while (resultado.next()){
-            System.out.print((resultado.getString("año") + " , "));
+            System.out.print((resultado.getString("año_matricula") + " , "));
             System.out.print((resultado.getInt("duracion") + " , "));
         }
         System.out.println(" }");

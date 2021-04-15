@@ -26,6 +26,7 @@ public class GetAsignatura extends HttpServlet {
             ServletException, IOException {
         PrintWriter out = response.getWriter();
         out.println("<p>Listado de asignaturas (con servlet)</p>");
+        conexion=new Conexion();
         AsignaturasDAO asignaturasDAO = new AsignaturasDAO(conexion);
         try {
             asignaturasDAO.mostrarAsignaturas();

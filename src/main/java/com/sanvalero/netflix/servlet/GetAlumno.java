@@ -28,6 +28,7 @@ public class GetAlumno extends HttpServlet{
             ServletException, IOException {
         PrintWriter out = response.getWriter();
         out.println("<p>Listado de alumnos (con servlet)</p>");
+        conexion=new Conexion();
         AlumnosDAO alumnosDAO=new AlumnosDAO(conexion);
         try {
             alumnosDAO.mostrarAlumnos();

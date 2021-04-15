@@ -29,18 +29,21 @@ public class AddMatriculados extends HttpServlet{
     //PARA AÑADIR MATRICULAS
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
-        String año_matricula = request.getParameter("año_matricula");
+        String año = request.getParameter("año_matricula");
         String duracionStr=request.getParameter("duracion");
         int duracion=Integer.parseInt(duracionStr);
         
-        Matriculados matriculados = new Matriculados(año_matricula, duracion);
+        Matriculados matriculados = new Matriculados(año, duracion);
+        
+        conexion=new Conexion();
         MatriculadosDAO matriculadosDAO=new MatriculadosDAO(conexion);
         try {
-            matriculadosDAO.añadirMatricula(año_matricula, duracion);
+            matriculadosDAO.añadirMatricula(año, duracion);
             
             PrintWriter out = response.getWriter();
             response.sendRedirect("myform4.jsp?status=ok");
         } catch (SQLException sqle) {
+            sqle.printStackTrace();
             response.sendRedirect("myform4.jsp?status=error");
         }
     

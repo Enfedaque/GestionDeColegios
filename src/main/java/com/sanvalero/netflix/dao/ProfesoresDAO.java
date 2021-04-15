@@ -7,6 +7,7 @@ package com.sanvalero.netflix.dao;
 
 import com.sanvalero.netflix.domain.Profesor;
 import com.sanvalero.netflix.dao.Conexion;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -52,11 +53,29 @@ public class ProfesoresDAO {
         ResultSet resultado=sentencia.executeQuery();
         System.out.print("Profesores{ ");
         while (resultado.next()){
-            System.out.print((resultado.getString("nombre_prof") + " , "));
+            System.out.println((resultado.getString("nombre_prof") + " , "));
             System.out.print((resultado.getString("dni") + " , "));
         }
         System.out.println(" }");
         sentencia.close();
+    }
+    
+    //ARRAY PARA MOSTRAR DATOS
+    public ArrayList<Profesor> mostrarProfesoresArray() throws SQLException{
+        String sql="SELECT nombre_prof , dni, telefono, edad FROM profesores";
+        ArrayList<Profesor> profesores=new ArrayList<>();
+        
+        PreparedStatement sentencia = conexion.getConexion().prepareStatement(sql);
+        ResultSet resultado=sentencia.executeQuery();
+        while (resultado.next()){
+            Profesor profesor=new Profesor();
+            profesor.setNombre_prof(resultado.getString("nombre_prof"));
+            profesor.setDni(resultado.getString("dni"));
+            profesor.setTelefono(resultado.getString("telefono"));
+            profesor.setEdad(resultado.getInt("edad"));
+            profesores.add(profesor);
+        }
+        return profesores;
     }
     
     

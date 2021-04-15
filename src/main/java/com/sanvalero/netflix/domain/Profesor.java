@@ -18,6 +18,11 @@ public class Profesor {
         this.dni = dni;
     }
     
+    //PRUEBA
+    public Profesor(){
+        
+    }
+    
     public int getEdad() {
         return edad;
     }

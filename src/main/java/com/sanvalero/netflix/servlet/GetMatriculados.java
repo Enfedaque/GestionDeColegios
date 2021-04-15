@@ -27,6 +27,7 @@ public class GetMatriculados extends HttpServlet{
             ServletException, IOException {
         PrintWriter out = response.getWriter();
         out.println("<p>Listado de matriculados (con servlet)</p>");
+        conexion=new Conexion();
         MatriculadosDAO matriculadosDAO=new MatriculadosDAO(conexion);
         try {
             matriculadosDAO.mostrarMatriculados();

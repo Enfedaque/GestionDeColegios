@@ -4,6 +4,7 @@ import com.sanvalero.netflix.dao.Conexion;
 
 import com.sanvalero.netflix.dao.ProfesoresDAO;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,13 +22,18 @@ public class RemoveProfesor extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
+        String dni = request.getParameter("dni");
         conexion=new Conexion();
+        ProfesoresDAO profesorDAO = new ProfesoresDAO(conexion);
+        
         try{
-            String dni = request.getParameter("dni");
-            ProfesoresDAO profesorDAO = new ProfesoresDAO(conexion);
+            
             profesorDAO.borrarProfesor(dni);
+            
+            
         }catch(SQLException sqle){
             sqle.printStackTrace();
+            response.sendRedirect("borrar1.jsp?status=error");
         }
         
         

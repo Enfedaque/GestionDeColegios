@@ -9,10 +9,10 @@
     <body>
         <div id="formulario">
         <h1 id="tituloform">Registrar matricula</h1>
-        <form method="post" action="add-matricula">
+        <form method="post" action="add-matriculados">
             <div class="itemform">
             Año
-            <input type="text" class="cuadroTexto" name="año" placeholder="Introduzca el año"/><br/>
+            <input type="text" class="cuadroTexto" name="año_matricula" placeholder="Introduzca el año"/><br/>
             </div>
             <div class="itemform">
             Duracion
