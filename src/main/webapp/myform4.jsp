@@ -8,14 +8,14 @@
     </head>
     <body>
         <div id="formulario">
-        <h1 id="tituloform">Registrar matricula</h1>
+        <h1 id="tituloform">Add License</h1>
         <form method="post" action="add-matricula">
             <div class="itemform">
-            Año
+            Year
             <input type="text" class="cuadroTexto" name="año_matricula" placeholder="Introduzca el año"/><br/>
             </div>
             <div class="itemform">
-            Duracion
+            Duration
             <input type="text" class="cuadroTexto" name="duracion" placeholder="Introduzca la duración"/><br/>
             </div>
             

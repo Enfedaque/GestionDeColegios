@@ -8,18 +8,18 @@
     </head>
     <body>
         <div id="formulario">
-        <h1 id="tituloform">Registrar asignatura</h1>
+        <h1 id="tituloform">Add Subject</h1>
         <form method="post" action="add-asignatura">
              <div class="itemform">
-            ID_Asignatura
+            ID_Subject
             <input type="text" class="cuadroTexto" name="id_asignatura" placeholder="Introduzca la asignatura"/><br/>
             </div>
              <div class="itemform">
-            Horas
+            Hours
             <input type="text" class="cuadroTexto" name="horas" placeholder="Introduzca el número de horas"/><br/>
             </div>
              <div class="itemform">
-            Difiultad
+            Difficulty
             <input type="text" class="cuadroTexto" name="dificultad" placeholder="Introduzca la dificultad"/><br/>
             </div>
            

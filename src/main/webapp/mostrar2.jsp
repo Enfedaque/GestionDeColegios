@@ -19,7 +19,7 @@
     <body>
         <div id="container">
             <div id="titulo">
-                <h1>LISTADO DE ALUMNOS</h1>
+                <h1>STUDENT´S LIST</h1>
             </div>
             <div id="lista">
                 <%

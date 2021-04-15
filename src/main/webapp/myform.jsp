@@ -8,18 +8,18 @@
     </head>
     <body>
         <div id="formulario">
-        <h1 id="tituloform">Registrar profesor</h1>
+        <h1 id="tituloform">Add Teacher</h1>
         <form method="post" action="add-profesor">
             <div class="itemform">
-            Nombre
+            Name
             <input type="text" name="nombre_prof" class="cuadroTexto" placeholder="Introduzca el nombre"/><br/>
             </div>
             <div class="itemform">
-            Telefono
+            Phone
             <input type="text" name="telefono" class="cuadroTexto" placeholder="Introduzca el número de telefono"/><br/>
             </div>
             <div class="itemform">
-            Edad
+            Age
             <input type="text" name="edad" class="cuadroTexto" placeholder="Introduzca la edad"/><br/>
             </div>
             <div class="itemform">
