@@ -12,7 +12,7 @@
         <form method="post" action="add-matricula">
             <div class="itemform">
             Año
-            <input type="text" class="cuadroTexto" name="año" placeholder="Introduzca el año"/><br/>
+            <input type="text" class="cuadroTexto" name="año_matricula" placeholder="Introduzca el año"/><br/>
             </div>
             <div class="itemform">
             Duracion

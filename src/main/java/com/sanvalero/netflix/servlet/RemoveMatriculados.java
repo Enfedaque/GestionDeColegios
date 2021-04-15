@@ -26,17 +26,17 @@ public class RemoveMatriculados extends HttpServlet{
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
-        
+        conexion=new Conexion();
         try{
             String año = request.getParameter("año");
            MatriculadosDAO matriculadosDAO=new MatriculadosDAO(conexion);
            matriculadosDAO.borrarMatricula(año);
+           response.sendRedirect("borrar4.jsp?status=ok");
         }catch(SQLException sqle){
             sqle.printStackTrace();
+            response.sendRedirect("borrar4.jsp?status=error");
         }
         
-        
-        response.sendRedirect("matriculados?message=matriculados eliminado");
     }
     
     

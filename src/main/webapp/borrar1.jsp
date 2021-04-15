@@ -24,7 +24,17 @@
             
             <input type="submit" value="Eliminar" id="botonRegistrar"/>
         </form>
-        
+        <%
+            String status = request.getParameter("status");
+            if (status == null)
+                status = "";
+                
+            if (status.equals("ok")) {
+                out.println("<p style='color:green'>El profesor ha sido eliminado</p>");
+            } else if (status.equals("error")) {
+                out.println("<p style='color:red'>No se ha podido eliminar el profesor</p>");
+            }
+        %>
         
     </body>
 </html>

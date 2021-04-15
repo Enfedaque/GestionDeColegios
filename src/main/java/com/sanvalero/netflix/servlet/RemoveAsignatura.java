@@ -21,17 +21,17 @@ public class RemoveAsignatura extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
-        
+        conexion=new Conexion();
         try{
-            String ID_Asignatura = request.getParameter("ID_Asignatura");
+            String ID_Asignatura = request.getParameter("id_asignatura");
             AsignaturasDAO asignaturaDAO = new AsignaturasDAO(conexion);
             asignaturaDAO.borrarAsignatura(ID_Asignatura);
+            response.sendRedirect("borrar3.jsp?status=ok");
         }catch(SQLException sqle){
             sqle.printStackTrace();
+            response.sendRedirect("borrar3.jsp?status=error");
         }
         
-        
-        response.sendRedirect("asignatura?message=Asignatura eliminado");
     }
     
     

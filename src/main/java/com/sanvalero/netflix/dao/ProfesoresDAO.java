@@ -63,7 +63,7 @@ public class ProfesoresDAO {
     //BORRAR PROFESORES POR DNI
     public void borrarProfesor(String dni) throws SQLException{
         
-     String sql="DELETE FROM alumno WHERE dni=?";   
+     String sql="DELETE FROM profesores WHERE dni=?";   
      PreparedStatement statement=conexion.getConexion().prepareStatement(sql);
     statement.setString(1, dni);
     statement.executeUpdate();

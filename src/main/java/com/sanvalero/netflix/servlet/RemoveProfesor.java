@@ -26,12 +26,12 @@ public class RemoveProfesor extends HttpServlet {
             String dni = request.getParameter("dni");
             ProfesoresDAO profesorDAO = new ProfesoresDAO(conexion);
             profesorDAO.borrarProfesor(dni);
+            response.sendRedirect("borrar1.jsp?status=ok");
         }catch(SQLException sqle){
             sqle.printStackTrace();
+            response.sendRedirect("borrar1.jsp?status=error");
         }
-        
-        
-        response.sendRedirect("profesor?message=Profesor eliminado");
+       
     }
     
     

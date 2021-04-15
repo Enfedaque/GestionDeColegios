@@ -60,7 +60,7 @@ public class AsignaturasDAO {
     //ELIMINAR UNA ASIGNATURA POR SU NOMBRE
     public void borrarAsignatura(String id_asignatura) throws SQLException {
         
-        String sql="DELETE FROM asignaturas WHERE id_asinatura=?";
+        String sql="DELETE FROM asignaturas WHERE id_asignatura=?";
         PreparedStatement sentenciaSql=conexion.getConexion().prepareStatement(sql);
         sentenciaSql.setString(1, id_asignatura);
         sentenciaSql.executeUpdate();
