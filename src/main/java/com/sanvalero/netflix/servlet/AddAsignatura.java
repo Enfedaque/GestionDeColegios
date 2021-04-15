@@ -23,12 +23,18 @@ public class AddAsignatura extends HttpServlet {
     //PARA AÑADIR PROFESORES
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
+<<<<<<< HEAD
         String ID_Asignatura = request.getParameter("ID_asignatura");
+=======
+        String ID_Asignatura = request.getParameter("id_asignatura");
+>>>>>>> 60051ca33f693308bf77c86fe7e2f9c7f16ecb78
         String horasStr = request.getParameter("horas");
         int horas=Integer.parseInt(horasStr);
-        String duracion = request.getParameter("duracion");
+        String duracion = request.getParameter("dificultad");
         
         Asignaturas asignatura = new Asignaturas(ID_Asignatura, horas, duracion);
+        
+        conexion=new Conexion();
         AsignaturasDAO asignaturasDAO = new AsignaturasDAO(conexion);
         try {
             asignaturasDAO.añadirAsignatura(ID_Asignatura, horas, duracion);
@@ -36,6 +42,7 @@ public class AddAsignatura extends HttpServlet {
             PrintWriter out = response.getWriter();
             response.sendRedirect("myform3.jsp?status=ok");
         } catch (SQLException sqle) {
+            sqle.printStackTrace();
             response.sendRedirect("myform3.jsp?status=error");
         }
     }
