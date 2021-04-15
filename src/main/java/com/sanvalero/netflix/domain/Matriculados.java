@@ -19,6 +19,10 @@ public class Matriculados {
         this.año_matricula = año_matricula;
         this.duracion = duracion;
     }
+
+    public Matriculados() {
+       
+    }
     
     //GETTER Y SETTER
 

@@ -26,6 +26,10 @@ public class Alumnos {
         this.telefono = telefono;
     }
 
+    public Alumnos() {
+        
+    }
+
     public String getId_alumno() {
         return id_alumno;
     }

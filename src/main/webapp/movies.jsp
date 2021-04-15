@@ -22,7 +22,7 @@
         <%
             for (Profesor profesor : listado) {
         %>
-        <li><%= profesor.getNombre_prof() + " , " +  profesor.getTelefono() + " , " +  profesor.getDni() + " , " +  profesor.getEdad()%>
+        <li><%= profesor.getNombre_prof() + " , " +  profesor.getTelefono() + " , " +  profesor.getDni() + " , " +  profesor.getEdad()%></li>
         <%    
             }
         %>

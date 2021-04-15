@@ -5,6 +5,7 @@
  */
 package com.sanvalero.netflix.dao;
 import com.sanvalero.netflix.dao.Conexion;
+import com.sanvalero.netflix.domain.Asignaturas;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -42,7 +43,7 @@ public class AsignaturasDAO {
     }
     
     //MOSTRAR ASIGNATURAS
-    public void mostrarAsignaturas() throws SQLException{
+    public void mostrarAsignaturas2() throws SQLException{
         String sql="SELECT id_asignaturas , horas , dificultad FROM asignaturas";
         PreparedStatement sentencia = conexion.getConexion().prepareStatement(sql);
         ResultSet resultado=sentencia.executeQuery();
@@ -56,6 +57,25 @@ public class AsignaturasDAO {
         sentencia.close();
     }
     
+    
+    //MOSTRAR ARRAY DE asignaturas
+    public ArrayList<Asignaturas> mostrarAsignaturas() throws SQLException{        
+    
+            String sql="SELECT * FROM asignaturas";
+            ArrayList<Asignaturas> asignaturas = new ArrayList<>();
+
+            PreparedStatement sentenciaSql=conexion.getConexion().prepareStatement(sql);
+            ResultSet resultado=sentenciaSql.executeQuery();
+            while(resultado.next()){
+                Asignaturas asignatura=new Asignaturas();
+                asignatura.setID_Asignatura(resultado.getString("id_asignatura"));
+                asignatura.setHoras(resultado.getInt("horas"));
+                asignatura.setDificultad(resultado.getString("dificultad"));
+                
+                asignaturas.add(asignatura);
+            }
+            return asignaturas;
+    }
     
     //ELIMINAR UNA ASIGNATURA POR SU NOMBRE
     public void borrarAsignatura(String id_asignatura) throws SQLException {
