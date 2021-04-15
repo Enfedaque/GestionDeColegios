@@ -21,7 +21,7 @@ public class ProfesoresDAO {
   private Conexion conexion;
     
     public ProfesoresDAO(Conexion conexion) {
-        this.conexion=conexion;;
+        this.conexion=conexion;
         
         
     }
