@@ -4,17 +4,7 @@ body{
     background-repeat:no-repeat;
     background-size:1950px 1000px;
 }
-.titulo{
-    color: black;
-}
 
-.cuerpo{
-    
-}
 
-.mostrar{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-}
+
+

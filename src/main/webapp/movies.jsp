@@ -8,9 +8,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Listado de peliculas</title>
+        <link rel="stylesheet" href="css/mostrar.css">
     </head>
     <body>
-        <h1>LISTADO DE PROFESORES</h1>
+        <div id="container">
+            <div id="titulo">
+            <h1>LISTADO DE PROFESORES</h1>
+            </div>
+        
         <%
             
             Conexion conexion=new Conexion();
@@ -18,7 +23,8 @@
             ProfesoresDAO profesoresDAO = new ProfesoresDAO(conexion);
             ArrayList<Profesor> listado = profesoresDAO.mostrarProfesores();
         %>
-        <ul>
+        <div id="lista">
+            <ul>
         <%
             for (Profesor profesor : listado) {
         %>
@@ -27,6 +33,10 @@
             }
         %>
         </ul>
+        </div>
+        </div>
+        
+        
         
         
         
