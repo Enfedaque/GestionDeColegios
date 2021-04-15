@@ -23,7 +23,7 @@ public class AddAsignatura extends HttpServlet {
     //PARA AÑADIR PROFESORES
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
-        String ID_Asignatura = request.getParameter("ID_Asignatura");
+        String ID_Asignatura = request.getParameter("ID_asignatura");
         String horasStr = request.getParameter("horas");
         int horas=Integer.parseInt(horasStr);
         String duracion = request.getParameter("duracion");
