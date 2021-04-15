@@ -17,8 +17,12 @@
         <link rel="stylesheet" href="css/mostrar3.css">
     </head>
     <body>
-        <h1>LISTADO DE PROFESORES</h1>
-        <%
+        <div id="container">
+            <div id="titulo">
+            <h1>LISTADO DE ASIGNATURAS</h1>
+            </div>
+            <div id="lista">
+            <%
             
             Conexion conexion=new Conexion();
             
@@ -34,5 +38,10 @@
             }
         %>
         </ul>
+        </div>
+        </div>
+        
+        
+        
     </body>
 </html>

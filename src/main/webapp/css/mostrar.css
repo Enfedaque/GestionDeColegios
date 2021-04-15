@@ -2,18 +2,13 @@
 
 body{
     
-    background-image: url(../images/fondo_formulario.jpg); 
-    
-}
-.titulo{
-    color: black;
-}
-
-.cuerpo{
+    background-image: url(../images/fondo_formulario.jpg);
+    background-repeat:no-repeat;
+    background-size:1550px 1000px;
     
 }
 
-.mostrar{
+#container{
     display: flex;
     flex-direction: column;
     text-align: center;
