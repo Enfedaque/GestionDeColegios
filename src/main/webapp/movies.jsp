@@ -12,9 +12,9 @@
     </head>
     <body>
         <div id="container">
-            <div id="titulo">
-            <h1>LISTADO DE PROFESORES</h1>
-            </div>
+           
+            <h1 id="titulo">LISTADO DE PROFESORES</h1>
+           
         
         <%
             
