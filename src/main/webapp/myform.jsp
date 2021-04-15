@@ -12,7 +12,7 @@
         <form method="post" action="add-profesor">
             <div class="itemform">
             Nombre
-            <input type="text" name="nombre-prof" class="cuadroTexto" placeholder="Introduzca el nombre"/><br/>
+            <input type="text" name="nombre_prof" class="cuadroTexto" placeholder="Introduzca el nombre"/><br/>
             </div>
             <div class="itemform">
             Telefono
