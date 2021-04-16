@@ -19,10 +19,10 @@
             
             <div class="itemform">
             ID_Student
-            <input type="text" name="id_alumno" class="cuadroTexto" placeholder="Introduzca el ID_Alumno"/><br/>
+            <input type="text" name="id_alumno" class="cuadroTexto" placeholder="Insert ID_Alumno"/><br/>
             </div>
             
-            <input type="submit" value="Eliminar" id="botonRegistrar"/>
+            <input type="submit" value="Remove" id="botonRegistrar"/>
         </form>
         <%
             String status = request.getParameter("status");

@@ -19,10 +19,10 @@
             
             <div class="itemform">
             Year
-            <input type="text" name="año" class="cuadroTexto" placeholder="Introduzca el año"/><br/>
+            <input type="text" name="año" class="cuadroTexto" placeholder="Insert year"/><br/>
             </div>
             
-            <input type="submit" value="Eliminar" id="botonRegistrar"/>
+            <input type="submit" value="Remove" id="botonRegistrar"/>
         </form>
         <%
             String status = request.getParameter("status");

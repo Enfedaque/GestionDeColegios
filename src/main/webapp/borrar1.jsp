@@ -19,10 +19,10 @@
             
             <div class="itemform">
             DNI
-            <input type="text" name="dni" class="cuadroTexto" placeholder="Introduzca el DNI"/><br/>
+            <input type="text" name="dni" class="cuadroTexto" placeholder="Insert DNI"/><br/>
             </div>
             
-            <input type="submit" value="Eliminar" id="botonRegistrar"/>
+            <input type="submit" value="Remove" id="botonRegistrar"/>
         </form>
         <%
             String status = request.getParameter("status");
