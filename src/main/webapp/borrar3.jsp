@@ -21,10 +21,10 @@
             
             <div class="itemform">
             ID_Subject
-            <input type="text" name="id_asignatura" class="cuadroTexto" placeholder="Introduzca el ID_Asignatura"/><br/>
+            <input type="text" name="id_asignatura" class="cuadroTexto" placeholder="Insert ID_Subject"/><br/>
             </div>
             
-            <input type="submit" value="Eliminar" id="botonRegistrar"/>
+            <input type="submit" value="Remove" id="botonRegistrar"/>
         </form>
         <%
             String status = request.getParameter("status");

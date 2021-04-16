@@ -12,18 +12,18 @@
         <form method="post" action="add-asignatura">
              <div class="itemform">
             ID_Subject
-            <input type="text" class="cuadroTexto" name="id_asignatura" placeholder="Introduzca la asignatura"/><br/>
+            <input type="text" class="cuadroTexto" name="id_asignatura" placeholder="Insert ID_Subject"/><br/>
             </div>
              <div class="itemform">
             Hours
-            <input type="text" class="cuadroTexto" name="horas" placeholder="Introduzca el número de horas"/><br/>
+            <input type="text" class="cuadroTexto" name="horas" placeholder="Insert hours"/><br/>
             </div>
              <div class="itemform">
             Difficulty
-            <input type="text" class="cuadroTexto" name="dificultad" placeholder="Introduzca la dificultad"/><br/>
+            <input type="text" class="cuadroTexto" name="dificultad" placeholder="Insert text"/><br/>
             </div>
            
-            <input type="submit" class="cuadroTexto" value="Registrar" id="botonRegistrar"/>
+            <input type="submit" class="cuadroTexto" value="Add" id="botonRegistrar"/>
         </form>
         </div>
         <%

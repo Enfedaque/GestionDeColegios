@@ -13,26 +13,26 @@
         <form method="post" action="add-alumno">
             <div class="itemform">
             ID_Student
-            <input type="text" name="id_alumno" class="cuadroTexto" placeholder="Introduzca el ID-Alumno"/><br/>
+            <input type="text" name="id_alumno" class="cuadroTexto" placeholder="Insert ID-Student"/><br/>
             </div>
             <div class="itemform">
             Name
-            <input type="text" name="nombre" class="cuadroTexto" placeholder="Introduzca el nombre"/><br/>
+            <input type="text" name="nombre" class="cuadroTexto" placeholder="Insert name"/><br/>
             </div>
             <div class="itemform">
             Surname 
-            <input type="text" name="apellido" class="cuadroTexto" placeholder="Introduzca el apellido"/><br/>
+            <input type="text" name="apellido" class="cuadroTexto" placeholder="Insert surname"/><br/>
             </div>
             <div class="itemform">
             Age
-            <input type="text" name="edad" class="cuadroTexto" placeholder="Introduzca la edad"/><br/>
+            <input type="text" name="edad" class="cuadroTexto" placeholder="Insert age"/><br/>
             </div>
             <div class="itemform">
             Phone
-            <input type="text" name="telefono" class="cuadroTexto" placeholder="Introduzca el número de telefono"/><br/>
+            <input type="text" name="telefono" class="cuadroTexto" placeholder="Insert number"/><br/>
             </div>
             
-            <input type="submit" value="Registrar" id="botonRegistrar"/>
+            <input type="submit" value="Add" id="botonRegistrar"/>
         </form>
         </div>
         <%
